@@ -1,0 +1,675 @@
+@import '../fonts/ProximaNova.css';
+
+html, body {
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
+
+	background: rgb(255,255,255);
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {
+	box-sizing: border-box;	
+	height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	margin: 0 0.9em 0 0.9em;
+	font-size: 150%;
+	font-size: 7.5vw;
+}
+
+/* Add a bottom margin. */
+body::after {
+	display:block;
+	content: '';
+	height: 1em;
+}
+
+/*  ----------------------------------------------------------
+							MAIN CONTENT
+	---------------------------------------------------------- */
+
+.ui-content {
+	margin-top: 0;
+}
+
+#header {
+	padding-top: 1%;
+	display: inline-block;
+	text-align: center;
+}
+
+#header img.logotype {
+	width: 10%;
+	padding: 0 2.5%;
+}
+
+main {
+	z-index: 0;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+
+	border: none;
+
+	font-family: inherit;
+	font-size: 63%;
+}
+
+input[type="text"],input[type="url"] {
+	width: 50%;
+
+	padding: 7px 14px 7px 14px;
+
+	font-family: inherit;
+	font-size: 63%;
+	color: #000;
+
+	border-radius: 4px;
+	border: none;
+
+	background-color: #f3f3f3; /* Default color: "Arctic". */
+}
+
+textarea {
+	box-sizing: border-box; /* Width & height includes padding & border. */
+	width: 100%;
+
+	padding: 7px 14px 7px 14px;
+
+	border-radius: 4px;
+	border: none;
+
+	font-family: inherit;
+	font-size: 63%;
+	line-height: 1.5;
+
+	background-color: #f3f3f3; /* Default color: "Arctic". */
+}
+
+button.clear {
+	margin-left: 1%;
+	background-color: #e15a64; /* Default color: "Soft Red". */
+}
+
+button,
+input.btn-group + label,
+.button {
+	display: inline-block;
+	box-sizing: border-box; /* Width & height includes padding & border. */
+
+	font-family: 'Proxima Nova Black';
+	font-size: inherit;
+	line-height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #fff;
+
+	margin: 0.15em 0 0.15em 0;
+	padding: 9px 13px 8px 13px;
+
+	border-radius: 4px;
+	border: none;
+
+	box-shadow: none;
+
+	background-color: #b9b9b9; /* Default color: "Charcoal" */
+}
+body > button,
+body > input.btn-group + label,
+main > button,
+main > input.btn-group + label {
+	font-size: 63% !important;
+}
+button:active, button.pressed,
+input.btn-group:active + label, input.btn-group + label:active,
+input.btn-group:checked + label {
+	box-shadow: inset 0 8px 9px -9px #000;
+	background-color: #9d9d9d; /* Default color: "Charcoal" */
+}
+button:focus,
+input.btn-group:focus {
+	outline: none;
+}
+
+button.wide,
+input.btn-group.wide + label,
+input.btn-group + label.wide {
+	width: 100%;
+}
+
+button.big,
+input.btn-group.big + label,
+input.btn-group + label.big {
+	font-size: 150%;
+	line-height: 3.0;
+}
+
+button.mediumText, 
+input.btn-group.mediumText + label,
+input.btn-group + label.mediumText{
+	font-size: 80%;
+}
+
+
+h1 {
+	display: inline;
+	padding: 0;
+	margin: 1em 0 0 0;
+
+	font-family: 'Proxima Nova Black';
+	font-size: 100%;
+	line-height: 1.5; 
+
+	vertical-align: middle;
+}
+
+h2,h3,h4,h5,h6 {
+	margin: 1em 0 0 0;
+	padding: 0;
+
+	font-family: 'Proxima Nova Bold';
+	font-size: 63%;
+
+	line-height: 1.5;
+
+	vertical-align: middle;
+}
+
+a {
+	color: #52afb8; /* Default color: "Blue Hue" (dark variant) */
+}
+
+p {
+	margin: 0.4em 0 0.4em 0;
+	padding: 0;
+
+	font-size: 63%;
+	line-height: 1.5;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	font-size: 63%;
+	text-align: left;
+}
+thead {
+	font-family: 'Proxima Nova Bold';
+}
+
+strong {
+	font-family: 'Proxima Nova Bold';
+}
+
+code {
+	font-size: inherit;
+}
+
+ol,ul {
+	list-style-type: none;
+	list-style-position: inside;
+	counter-reset: item;
+
+	margin: 0.5em 0 0 0;
+	padding: 0;
+
+	font-size: 63%;
+}
+ol li, ul li {
+	padding: 0.5em 0 0.5em 0;
+
+	font-size: inherit;
+	line-height: 1.5;
+}
+ol li:before {
+	content: counter(item) ". ";
+	counter-increment: item;
+	font-family: 'Proxima Nova Bold';
+}
+ul.dynamic {
+	list-style-type: none;
+	padding: 0;
+}
+ul.dynamic li {
+	padding: 4% 15% 4% 4%;
+
+	border-radius: 4px;
+	border: none;
+
+	box-shadow: inset 0 -7px 12px -12px #000;
+
+	background-color: #f3f3f3;
+}
+ul.dynamic li:last-child {
+	box-shadow: none;
+}
+ul.dynamic li a {
+	color: #000;
+}
+ul.dynamic.arrow li,
+ul.dynamic li.arrow {
+	background-image: url('../images/arrow-right.svg');
+	background-position: 94% center; /* CSS 2 fallback */
+	background-position: right 5% center; /* requires CSS 3 */
+	background-size: 1em auto;
+	background-repeat: no-repeat;
+}
+ul.topcoat-list{	
+	border: 2px solid lightgray;
+	border-radius: 4px;	
+	padding: 0 4%;
+}
+
+
+/*  ----------------------------------------------------------
+							DATA SCREEN
+	---------------------------------------------------------- */
+
+
+.playerTime {
+	padding: 0.5em 0;
+	text-align: center;
+	font-size: 0.5em
+}
+
+.row {
+	display: flex;
+}
+  
+.column {
+	flex: 50%;
+	padding: 1%;
+}
+  
+.bar {
+	width: 50px;
+	height: 0px;
+	background: green;
+}
+
+.status {
+	transform: rotate(180deg);
+	font-size: 0.8em;
+}
+
+#chronotime {
+	border: solid 1px black; 
+	width: 100%;
+	text-align: center;
+	padding: 0.5em 0 0.5em 0;
+	margin: 0.15em 0 0 0;
+}
+
+#chrono1, #chrono2 {
+	font-size: 2em;
+}
+
+#grad1pic, #grad2pic {
+	background-image: url("../images/wheelchair.png");
+	background-repeat: no-repeat;
+	height: 2em;
+	width: 2em;
+	position: relative;
+	top: 200px;
+	margin-top: -1.5em;
+	z-index: 2;
+}
+
+#grad1pic{
+	margin-left: auto;
+}
+
+#grad2pic{
+	margin-left: 10%;
+}
+
+#grad1, #grad2 {
+	width: 50px;
+	height: 200px;
+	border: 4px solid black;
+	transform: rotate(180deg);
+}
+
+#grad1{
+	margin-left: 5%;
+}
+
+#grad2{
+	margin-left: auto;
+	margin-right: 5%;
+}
+
+#circuitContainer{
+	position: relative;
+	width: 0;
+	height: 0;
+}
+
+#circuit{
+	position: absolute;
+	top: 65px;
+	left: -71px;
+	background-image: url('../images/circuit.png');
+	background-repeat: no-repeat;
+	height: 220px;
+	width: 142px;
+}
+
+/*  ----------------------------------------------------------
+							OPTIONS
+	---------------------------------------------------------- */
+
+input[type=text], input[type=number], select {
+	padding: 12px;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+input[type=text], input[type=number] {
+	width: 90%;
+}
+
+input[type=range], select {
+	width: 100%;
+}
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+#optionsContainer {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+#optionsContainer > .row {
+	display: block;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.col-25, .col-75, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
+}
+
+
+/*  ----------------------------------------------------------
+								FOOTER
+	---------------------------------------------------------- */
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;	
+	text-align: center;
+	height: 50px;
+	padding: 1rem;
+}
+
+footer img.logotype {
+	width: 30%;
+	margin: 0 5%;
+}
+
+
+/*  ----------------------------------------------------------
+								COLORS
+	---------------------------------------------------------- */
+
+/*  Color: "Soft Red"
+	Class name: red
+    ---------------- */
+.color_softred { color: #e15a64; }
+.bg_red, input.red, button.red, ul.red li, label.red,
+input.red + label {
+	background-color: #e15a64 !important;
+	color: white !important;
+}
+/* Downpressed button. */
+button.red:active, button.red.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.red,
+input.btn-group.red:active + label,
+input.btn-group:checked + label.red,
+input.btn-group.red:checked + label {
+	background-color: #cb414b;
+}
+
+/*  Color: "Bright Light"
+	Class name: yellow
+    -------------------- */
+.color_brightlight { color: #ecd53b; }
+.bg_yellow, input.yellow, button.yellow, ul.yellow li, label.yellow,
+input.yellow + label {
+	background-color: #ecd53b !important;
+	color: white !important;
+}
+/* Downpressed button. */
+button.yellow:active, button.yellow.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.yellow,
+input.btn-group.yellow:active + label,
+input.btn-group:checked + label.yellow,
+input.btn-group.yellow:checked + label {
+	background-color: #d9c022;
+}
+
+/*  Color: "Wave Green"
+	Class name: green
+    ------------------ */
+.color_wavegreen { color: #54dfb3; }
+.bg_green, input.green, button.green, ul.green li, label.green,
+input.green + label {
+	background-color: #54dfb3 !important;
+	color: white !important;
+}
+/* Downpressed button. */
+button.green:active, button.green.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.green,
+input.btn-group.green:active + label,
+input.btn-group:checked + label.green,
+input.btn-group.green:checked + label {
+	background-color: #3aca9c;
+}
+
+/*  Color: "Blue Hue"
+	Clas name: blue
+    ------------------ */
+.color_bluehue { color: #6bc6ce; }
+.bg_blue, input.blue, button.blue, ul.blue li, label.blue,
+input.blue + label {
+	background-color: #6bc6ce;
+}
+/* Downpressed button. */
+button.blue:active, button.blue.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.blue,
+input.btn-group.blue:active + label,
+input.btn-group:checked + label.blue,
+input.btn-group.blue:checked + label {
+	background-color: #52afb8;
+}
+
+/*  Color: "Indigo"
+	Class name: indigo
+    ------------------ */
+.color_indigo { color: #b48b9b; }
+.bg_indigo, input.indigo, button.indigo, ul.indigo li, label.indigo,
+input.indigo + label {
+	background-color: #b48b9b;
+}
+/* Downpressed button. */
+button.indigo:active, button.indigo.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.indigo,
+input.btn-group.indigo:active + label,
+input.btn-group:checked + label.indigo,
+input.btn-group.indigo:checked + label {
+	background-color: #9c7283;
+}
+
+/*  Color: "Arctic"
+	Class name: arctic
+    ------------------ */
+.color_arctic { color: #f3f3f3; }
+.bg_arctic, input.arctic, button.arctic, ul.arctic li,
+input.arctic + label {
+	background-color: #f3f3f3;
+}
+/* Downpressed button. */
+button.arctic:active, button.arctic.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.arctic,
+input.btn-group.arctic:active + label,
+input.btn-group:checked + label.arctic,
+input.btn-group.arctic:checked + label {
+	background-color: #656565;
+}
+
+/*  Color: "Aluminium"
+	Class name: aluminium
+    ------------------ */
+.color_aluminium { color: #e2e2e2 }
+.bg_aluminium, input.aluminium, button.aluminium, ul.aluminium li,
+input.aluminium + label {
+	background-color: #e2e2e2;
+}
+/* Downpressed button. */
+button.aluminium:active, button.aluminium.pressed,
+ /* Input element with adjacent label. */
+input.btn-group:active + label.aluminium,
+input.btn-group.aluminium:active + label,
+input.btn-group:checked + label.aluminium,
+input.btn-group.aluminium:checked + label {
+	background-color: #c0c0c0;
+}
+
+/*  Color: "Charcoal"
+	Class name: charcoal
+    ------------------ */
+.color_charcoal { color: #b9b9b9; }
+.bg_charcoal, input.charcoal, button.charcoal, ul.charcoal li,
+input.charcoal + label {
+	background-color: #b9b9b9;
+}
+/* Downpressed button. */
+button.charcoal:active, button.charcoal.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.charcoal,
+input.btn-group.charcoal:active + label,
+input.btn-group:checked + label.charcoal,
+input.btn-group.charcoal:checked + label {
+	background-color: #9d9d9d;
+}
+
+/*  Color: "Stone"
+	Class name: stone
+    ------------------ */
+.color_stone { color: #777777 }
+.bg_stone, input.stone, button.stone, ul.stone li,
+input.stone + label {
+	background-color: #777777;
+}
+/* Downpressed button. */
+button.stone:active, button.stone.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.stone,
+input.btn-group.stone:active + label,
+input.btn-group:checked + label.stone,
+input.btn-group.stone:checked + label {
+	background-color: #656565;
+}
+
+/*  Color: "Jet Black"
+	Class name: jetblack
+    ------------------ */
+.color_black { color: #070707 }
+.bg_black, input.black, button.black, ul.black li,
+input.black + label {
+	background-color: #070707;
+}
+/* Downpressed button. */
+button.black:active, button.black.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.black,
+input.btn-group.black:active + label,
+input.btn-group:checked + label.black,
+input.btn-group.black:checked + label {
+	background-color: #000000;
+}
+
+@media	screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio : 2),
+		screen and (orientation: landscape) and (min--moz-device-pixel-ratio: 2),
+		screen and (orientation: landscape) and (min-device-pixel-ratio : 2) {
+	body { font-size: 4.5vw; }
+}
+
+
+/*  ----------------------------------------------------------
+								GAME
+	---------------------------------------------------------- */
+
+#racer1,
+#racer2         		{ position: relative; z-index: 0; width: 100%; height:100%; border: 2px solid black; }
+#canvas1, 
+#canvas2        		{ z-index: 0; width: 100%; height: 100%; background-color: #72D7EE; }
+#chronotime     		{ text-align: center; }
+
+.row            		{ display: flex; }
+.column         		{ flex: 50%; padding: 1%; }
+.hud            		{ position: absolute; z-index: 1; width: 100%; background-color: rgba(100, 100, 100, 0.8); }
+.hudelement     		{ padding: 0.5em; font-size: 1.8vw; color: white; }
+.hudcentered    		{ text-align: center; padding: 0.5em 0 0 0; }
+.hudleft        		{ float: left; width: 40%; }
+.hudright,
+.speed          		{ float: right; }
+.topspeed .value,
+.speed .value   		{ display: inline-block; width: 5vw; }
+.speedbubble    		{ position: absolute; display: inline-block; height: 30%; width: 25%; margin: 25% 0 0 5%; background: rgba(100, 100, 100, 0.6); border-radius: 50%; }
+.speedbubbleamount 		{ font-size: 6vw; line-height: 11vw; text-align: center; color: white; }
+.distancebubble    		{ position: absolute; display: inline-block; height: 30%; width: 35%; margin: 25% 0 0 60%; background: rgba(100, 100, 100, 0.6); border-radius: 50%; }
+.distancebubbleamount 	{ font-size: 6vw; line-height: 11vw; text-align: center; color: white; }
+.displayWinner  		{ position: absolute; margin-top: 7vw; font-size: 7vw; color: gold; text-align: center; -webkit-text-stroke: 1px black; background: rgba(255, 255, 255, 0.6); width: 100%; }
