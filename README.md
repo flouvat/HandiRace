@@ -1,7 +1,7 @@
 # HandiRace
 
 ## Description
-The HandiRace project is a mobile application which aims to make young people aware of the handicap (wheelchair). The primary version was intended to allow two people to compete on a home trainer using a racing game.
+The HandiRace Project is a mobile application and an arduino-based ardware that aim to help wheelchair racing paralympic athletes train indoors and demonstrate to the general public
 
 ## Installation and Usage
 See the the Wiki for more details.
