@@ -6,7 +6,7 @@
             initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
         <title>HandiRace</title>
-        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="ui/css/evothings-app.css">
         <style>
             @import 'ui/css/evothings-app.css';
         </style>
@@ -126,6 +126,8 @@
 
                 <button id="optionsMenu" class="aluminium wide" onclick="app.optionsScreen()">Options</button>
 
+                <button id="toGraph" class="aluminium wide" onclick="app.graphScreen()">Graph interface</button>
+
                 <button id="disconnectButton" class="yellow wide" onclick="app.disconnect()">Deconnecter</button>
 
             </div>
@@ -178,7 +180,6 @@
                 </div>
 
             </div>
-
 <!------------------------------------------------------------------------------------------------------------------------------------------------------- OPTIONS SCREEN -------------->
             <div id="optionsScreen">
                 
@@ -286,6 +287,58 @@
                 
             </div>
 
+<!------------------------------------------------------------------------------------------------------------------------------------------------------- GRAPH SCREEN -------------->
+
+            <div id="graphScreen" class="graphFonction">
+                <div id="graphMenuScreen">
+                    <div id="MenuHeader">
+                        <img class="logoHR" src="ui/images/logoHR.png" alt="Handirace logo" />
+                        <p>Menu de visualisation de Data</p>
+                    </div>
+                    <button id="getInfos" class="mediumButton" onclick="app.graphDirectDataScreen()">Direct Data</button>
+                    <button id="toGame" class="mediumButton" onclick="app.graphComparaisonScreen()">Comparaison</button>  
+                    <button id="optionsMenu" class="mediumButton" onclick="app.quit()">Quitter</button>
+                </div>
+            </div>
+
+            <div id="graphDirectDataScreen" class="graphFonction">
+                <canvas id="line-chart-Direct" width="800" height="450"></canvas>
+                <div class="chrono">Chrono: <span id="chronoDataLive" class="value">00:00:000</span></div>
+                <button id="getInfos" class="green wide" onclick="chronoStart(chronoDataLive)">Demarrer</button>
+                <button id="getInfos" class="red wide" onclick="chronoReset(chronoDataLive)">Reset</button>
+                <button id="graphQuit" onclick="app.goBack()"> Return </button>
+            </div>
+
+            <div id="graphComparaisonScreen" class="graphFonction">
+                <div class="col-container">
+                    <div class="col">
+                        <p>Choisissez une performance :</p>
+                        <select id="performanceChoice1" class="custom-select">
+                            <option selected disabled>choix ...</option>
+                        </select>
+                        <p>Choisissez une performance :</p>
+                        <select id="performanceChoice2" class="custom-select">
+                            <option selected disabled>choix ...</option>
+                        </select>
+                        <button id="CompareButton" class="mediumButton marg" onclick="app.compare()">Comparer</button>
+                    </div>
+                    <div class="col">
+                        <canvas id="line-chart-Comparaison" width="800" height="450"></canvas>
+                    </div>
+                </div>
+                <div class="col-container">
+                    <div class="col">
+                        <canvas id="doughnut-chart1" width="800" height="450"></canvas>
+                        <canvas id="doughnut-chart2" width="800" height="450"></canvas>
+                    </div>
+                    <div class="col">
+                        <canvas id="doughnut-chart3" width="800" height="450"></canvas>
+                        <canvas id="doughnut-chart4" width="800" height="450"></canvas>
+                    </div>
+                </div>
+                <button id="graphQuit" onclick="app.goBack()"> Return </button>
+            </div>
+            
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------- MESSAGE DIV -------------->
             <div id="messageDiv" style="font-size:75%"></div> 
 
@@ -301,12 +354,14 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             app.initialize();
-        </script>
+        </script> -->
         <script type="text/javascript" src="js/gamehelpersandconstants.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/game.js"></script>
+        <script type="text/javascript" src="chartjs/node_modules/chart.js/dist/Chart.js"></script>
+        <script type="text/javascript" src="js/graph.js"></script>
 
     </body>
 </html>

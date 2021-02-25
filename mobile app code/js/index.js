@@ -11,6 +11,9 @@ var app = {
         buttons.hidden = true;
         dataScreen.hidden = true;
         optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
     },
     deviceready: function() {
 
@@ -101,12 +104,18 @@ var app = {
         buttons.hidden = true;
         dataScreen.hidden = true;
         optionsScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+        graphScreen.hidden = true;
     },
     gameScreen: function(){
         gameScreen.hidden = false;
         buttons.hidden = false;
         dataScreen.hidden = true;
         optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
         app.currentScreen = "game";
     },
     dataScreen: function(){
@@ -114,8 +123,59 @@ var app = {
         buttons.hidden = false;
         dataScreen.hidden = false;
         optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
         app.currentScreen = "data";
     },
+    //================================================================
+    graphScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = false;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    graphDirectDataScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = false;
+        graphComparaisonScreen.hidden = true;
+    },
+    graphComparaisonScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = false;
+    },
+    quit: function(){
+        gameScreen.hidden = false;
+        buttons.hidden = false;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    goBack: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = false;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+
+    //=================================================================
     options: {  // all variables used in both data and game and set by the user in optionsScreen
         rayon: document.getElementById('rayonOption').value,
         distance: document.getElementById('distanceOption').value,
@@ -132,7 +192,11 @@ var app = {
         buttons.hidden = true;
         dataScreen.hidden = true;
         optionsScreen.hidden = false;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
     },
+
     quitOptions: function(){
         optionsScreen.hidden = true;
         if(app.currentScreen == "game"){

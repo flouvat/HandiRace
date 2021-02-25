@@ -7,7 +7,7 @@ html, body {
 	font-family: 'Proxima Nova Regular', sans-serif;
 	font-weight: normal;
 
-	background: rgb(255,255,255);
+	background: #152B39;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -106,6 +106,7 @@ button.clear {
 	margin-left: 1%;
 	background-color: #e15a64; /* Default color: "Soft Red". */
 }
+
 
 button,
 input.btn-group + label,
@@ -370,6 +371,81 @@ ul.topcoat-list{
 	background-repeat: no-repeat;
 	height: 220px;
 	width: 142px;
+}
+
+/*  ----------------------------------------------------------
+							GRAPH SCREEN
+	---------------------------------------------------------- */
+
+.graphFonction {
+  margin: 0;
+  overflow: hidden;
+  background: #152B39;
+  font-family: Courier, monospace;
+  font-size: 14px;
+  color:#ccc; 
+}
+
+#graphQuit{
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 4px;
+	border: none;
+	background-color: #1c3b4f;
+	width: 100%;
+}
+
+#MenuHeader{
+	margin-bottom: 2%;
+	margin-top: 2%;
+	text-align: center;
+}
+
+#MenuHeader, p{
+	font-size: 100%;
+}
+
+.mediumButton{
+	text-align: center;
+	text-transform: uppercase;
+	margin-left: 35%;
+	margin-bottom: 5%;
+	display: inline;
+	color: #fff;
+	border-radius: 4px;
+	border: none;
+	background-color: #1c3b4f;
+	width: 30%;
+}
+
+.logoHR{
+	width: 30%;
+	display: inline;
+}
+
+#compare{
+	width: 100%;
+}
+
+.marg{
+	margin-top: 2%;
+}
+
+/*.col-container {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  
+  padding: 1em;
+}*/
+
+.custom-select{
+	background-color:#1c3b4f;
+	color :#ccc;
+	font-family: 
 }
 
 /*  ----------------------------------------------------------
@@ -639,6 +715,10 @@ input.btn-group.black:active + label,
 input.btn-group:checked + label.black,
 input.btn-group.black:checked + label {
 	background-color: #000000;
+}
+
+#toGraph{
+	background-color: #152B39;
 }
 
 @media	screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio : 2),
