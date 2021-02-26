@@ -10,6 +10,7 @@ See the the Wiki for more details.
 *  Guillaume Couarc'h, former bachelor student in computer science at the University of New Caledonia
 *  Cédric Caruzzo, bachelor student in computer science at the University of New Caledonia
 *  Nicolas Brignone, paralympic athlete 
+*  Benoit Mantez, University of New Caledonia
 *  Thomas Quiniou, University of New Caledonia
 *  Frédéric Flouvat, University of New Caledonia
 
