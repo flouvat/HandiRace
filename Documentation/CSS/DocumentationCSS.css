@@ -1,0 +1,138 @@
+html,body{
+  min-width:290px;
+  color:#4d4e53;
+  background-color:#fff;
+  font-family:'Open Sans',Arial,sans-serif;
+  line-height:1.5;
+}
+
+#navbar{
+  position:fixed;
+  min-width:290px;
+  top:0px;
+  left:0px;
+  width:300px;
+  height:100%;
+  border-right:solid;
+  border-color:rgba(0,22,22,0.4);
+}
+
+header{
+  color:black;
+  text-align:center;
+  font-size:30px;
+  margin:10px;
+  font-size:1.8em;
+  font-weight:thin;
+}
+header h1{
+    margin-bottom: 0;
+}
+header h2{
+    margin-bottom: 0;
+}
+
+#main-doc header{
+  text-align:left;
+  margin:0px;
+}
+
+#navbar ul{
+  height:88%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+#navbar li{
+  color: #4d4e53;
+  border:1px solid;
+  border-bottom-width:0px;
+  padding:8px;
+  padding-left:45px;
+  list-style:none;
+  position:relative;
+  left:-50px;;
+  width:100%;
+}
+
+#navbar li:hover{
+  color:#66ff00;
+  transition: color 0.5s;
+}
+
+#navbar a{
+  color: #4d4e53;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+#navbar header{
+  background-color:#dedede;
+  margin:auto;
+  padding-bottom:5px;
+}
+
+#main-doc{
+  position:absolute;
+  margin-left:310px;
+  padding:20px;
+  margin-bottom:110px;
+  max-width:1100px;
+}
+
+.hardwareProduct{
+    width: 7%;
+}
+
+.Pic{
+    width: 15%;
+}
+
+.fichier{
+  max-height: 15em;
+  overflow: scroll;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.downloadbtn{
+  text-decoration: none;
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+section article{
+  color:#4d4e53;
+  margin:15px;
+  font-size:0.96em;
+}
+
+section li{
+  margin:15px 0px 0px 20px;
+}
+
+code{
+  display:block;
+  text-align:left;
+  white-space:pre;
+  position:relative;
+  word-break:normal;
+  word-wrap:normal;
+  line-height:2;
+  background-color: #eaeaea;
+  padding:15px;
+  margin:10px;
+  border-radius:5px;
+}

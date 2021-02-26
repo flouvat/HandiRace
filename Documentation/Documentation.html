@@ -1,0 +1,2880 @@
+<!-- //===============================================
+// author : Cedric Caruzzo
+// Github : https://github.com/CaruzzoC
+// annee : 2020
+//=============================================== -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Technical Documentation HandiRace">
+  <meta name="keywords" content="HTML,CSS">
+  <meta name="author" content="CaruzzoC">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/DocumentationCSS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>HandiRace</header>
+    <ul>
+      <a class="nav-link" href="#Overview" rel="internal"><li>Overview</li></a>
+      <a class="nav-link" href="#Thing" rel="internal"><li>Thing</li></a>
+      <a class="nav-link" href="#Story" rel="internal"><li>Story</li></a>
+      <a class="nav-link" href="#Quick_use" rel="internal"><li>Quick Use</li></a>
+      <a class="nav-link" href="#Diagram" rel="internal"><li>diagram</li></a>
+      <a class="nav-link" href="#Materials" rel="internal"><li>Materials</li></a>
+      <a class="nav-link" href="#SoftSetUp" rel="internal"><li>Software Set Up</li></a>
+      <a class="nav-link" href="#Wiring" rel="internal"><li>Wiring</li></a>
+      <a class="nav-link" href="#Script" rel="internal"><li>Script</li></a>
+      <a class="nav-link" href="#Graphical_part" rel="internal"><li>Graphical Part</li></a>
+      <a class="nav-link" href="#Arduino" rel="internal"><li>Arduino Code</li></a>
+    </ul>
+  </nav>
+  <main id="main-doc">
+  	<section class="main-section" id="Overview">
+      <header><h1>Arduino HandiRace phone application</h1></header>
+      <article>
+        <p>The HandiRace project is a mobile application which aims to make young people aware of the handicap (wheelchair). The primary version was intended to allow two people to compete on a home trainer using a racing game.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Thing">
+      <header><h2>Things used in this project</h2></header>
+      <header>Hardware Components</header>
+      <article>
+        <p><img class="hardwareProduct" src="img/ArduinoMini.jpg" alt="Arduino Mini 05" /> <a href="https://store.arduino.cc/usa/arduino-mini-05">Arduino Mini 05</a></p>
+
+        <p><img class="hardwareProduct" src="img/HC-05 Bluetooth module.jpg" alt="HC-05 Bluettoth Module" /><a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR">HC-05 Bluettoth Module</a></p>
+
+        <p><img class="hardwareProduct" src="img/LED.jpg" alt="LED" /> <a href="https://www.newark.com/multicomp-pro/mcl053md/led-red-t-1-3-4-5mm-15mcd-625nm/dp/14N9416?COM=ref_hackster">DEL</a></p>
+        
+        <p><img class="hardwareProduct" src="img/220ohm.jpg" alt="Resistor 220 ohm" /> <a href="https://www.amazon.com/Projects-25EP512220R-220-Resistors-Pack/dp/B0185FJ6RY?ref_=fsclp_pl_dp_7">220 Ohm Resistor</a></p>
+
+        <p><img class="hardwareProduct" src="img/18ohm.jpg" alt="Resistor 220 ohm" /> <a href="https://www.amazon.com/Projects-Resistors-Watt-Choose-Quantity/dp/B0777T7R4Y">18 Ohm Resistor</a></p>
+
+        <p><img class="hardwareProduct" src="img/103capacitor.jpg" alt="Resistance 220 ohm" />103 ceramic Capacitor</p>
+
+        <p><img class="hardwareProduct" src="img/Serial Adapter Module for Arduino.jpg" alt="Serial Adapter Module for Arduino" /> <a href="https://www.amazon.com/Qunqi-FT232RL-Serial-Adapter-Arduino/dp/B014Y1IMNM">Serial Adapter Module for Arduino</a></p>
+      </article>
+      <header>Hand tools and fabrication machines</header>
+      <article>
+      	<p><img class="hardwareProduct" src="img/soldering.jpg" alt="Soldering iron" /> Soldering iron</p>
+        <p><img class="hardwareProduct" src="img/ultimaker2p.jpg" alt="3d printing machine" /> Ultimaker 2+</p>
+      </article>
+    </section>
+    <section class="main-section" id="Story">
+      <header><h2>Story</h2></header>
+      <header>The Game</header>
+      <article>
+        <p>The game used in the HandiRace application is an 8-bit / racing style game. The benchmark for implementation is the OutRun game. This game was released in 1986, mainly developed for use on an arcade machine.</p>
+      </article>
+      <header>Use</header>
+      <article>
+      <p>As explained in the Project Summary, this project aims to educate young people. The result must therefore be in the form of an activity. For this, we use home trainers. Home trainers are platforms that allow the wheelchair to be used on site (same principle as a home trainer for bikes).
+	  Two wheelchairs are therefore installed on trainers side by side. Once the application and the game have started, the wheel rotation of the chair is captured, and used as input for our application. So we control the game car using the wheelchair.</p>
+
+	  <p>The Hardware comes down to a box that allows two analog connections, to connect the two rotation detectors.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Quick_use">
+      <header><h2>Quick use</h2></header>
+      <header>Software</header>
+      <article>
+        <p>Download all the packages for use here: </p>
+        <button class="btn"><i class="fa fa-download"></i><a class="downloadbtn" href="download/software.zip" download="software">Download</a></button>
+      </article>
+      <header>3D Printing plan</header>
+      <article>
+      <p>Download the 3D printing plan: </p>
+        <button class="btn"><i class="fa fa-download"></i><a class="downloadbtn" href="download/HandiRace_Module_v8.stl" download="3D plan">Download</a></button>
+
+    <p>The Hardware comes down to a box that allows two analog connections, to connect the two rotation detectors.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Diagram">
+      <header><h2>diagram</h2></header>
+      <article>
+      	<img src="img/Schem.png" alt="Diagram" />
+
+        <p>The assembly consists of an Arduino MINI card, with a Bluetooth card which allows remote communication between the Hardware module and the phone, a 9V battery and two assemblies for the sensors. (on the diagram, one of the sensors is not connected so as not to make it more complex than necessary).</p>
+      </article>
+    </section>
+    <section class="main-section" id="Materials">
+      <header><h2>Materials</h2></header>
+      <article>
+        <li>Arduino Mini 05</li>
+        <li>USB adapter</li>
+        <li>Bluetooth card</li>
+        <li>Resistor</li>
+        <li>Capacitor</li>
+        <li>DEL</li>
+        <li>magnetic Sensor</li>
+        <li>Battery 9V</li>
+      </article>
+    </section>
+    <section class="main-section" id="SoftSetUp">
+      <header><h2>Software Set Up<h2></header>
+      <article>
+        <header><h3>Arduino</h3></header>
+        <p>For setting up the Arduino environment, it's more than simple. Just download the IDE available on the official Arduino website. No further manipulation is necessary. <a href="https://www.arduino.cc/en/Guide/HomePage">(Arduino link)</a></p>
+        <header><h3>Apache Cordova</h3></header>
+        <header>Node.js</header>
+        <p>For the installation of the Apache Cordova Framework, we must start with the installation of Node.js. Installation is very simple, just go to this site: <a href="https://nodejs.org/en/">Node.js</a></p>
+        <header>Apache Cordova</header>
+        <p>Once the installation of Node.js is done, you can install Apache Cordova by command line: <code>npm install -g cordova</code>Once installed, to create the project directory, you must manually create the directory in the desired location. Then, in the terminal, move to the project directory, and do the following command: <code>cordova create [folder name] [reverse domain] [project name]</code></p>
+        <header>SDK / JDK</header>
+        <P>If you want to compile the files into a native Android file, you must install the various SDKs. Since I am making my project for an Android application, I will hang the Android SDK. But if the project is to be developed for IOS you need the IOS SDK, but to be able to develop an IOS application you must have a machine that works with the MAC OS operating system.</P>
+        <header>JDK</header>
+        <p>For the JDK it can be found on this site: <a href="https://www.oracle.com/java/technologies/javase-jdk8-downloads.html">Java JDK</a>. Then add the directory location to the PATH for easier accessibility and building.</p>
+        <header>Android SDK</header>
+        <p>I did not find the Android SDK on the official site. It no longer offers the SDK separately, they force a package with the Android Studio IDE. So I took the SDK on an alternative site, we can find it here: <a href="https://www.techspot.com/downloads/5425-android-sdk.html">Android SDK</a>. As for the JDK, we will add the Android SDK directory to the PATH for the same reason. Add the path to "Platform-tools" and "tools".</p>
+        <header>Apache Ant</header>
+        <p>Apache Ant is not an SDK, but a command library. This library will facilitate the compilation of Apache Cordova project. You can find it here: <a href="http://ant.apache.org/bindownload.cgi">Apache Ant</a>. For Ant, once the Zip file has been decompressed, the bin file must be added to the PATH.</p>
+        <p>We can now add the SDK to the project with the following command (terminal)(you must be in the project directory): <code>cordova platforms add android</code>To build the file just type this command (terminal)(you must be in the project directory): <code>cordova build</code></p>
+        <header><h3>Error management</h3></header>
+        <p>In a first step we can verify that all our tools are well implemented in the PATH, by calling them in the command prompt. At the command prompt, verify that each of these commands works: <code>cordova</code><code>javac</code><code>node</code></p>
+        <header>how to tell if a tool is installed incorrectly</header>
+        <p>If the Terminal gives you such answer :<code>[command] is not recognized as an internal command or external, an executable program or a batch file.</code>It means the tool is incorectly installed or linked to the PATH.</p>
+        <p>The last prerequisite is to place yourself in the cordova project file, and try the command :<code>cordova requirements</code>If something is missing, it will be indicated, and an installation method will be suggested.</p>
+      </article>
+    </section>
+    <section class="main-section" id="Wiring">
+      <header><h2>Wiring</h2></header>
+      <article>
+        <p>This assembly is composed of four main modules</p>
+        <li>DEL module</li>
+        <li>switch module</li>
+        <li>Bluetooth module</li>
+        <li>Battery module</li>
+      </article>
+      <header><h3>DEL module</h3></header>
+      <article>
+      	<p>The DEL module is simple. On the positive leg of the DEL, it is necessary to add in series a resistance of 220 Ohms. Once the assembly is done, we connect the module to the Arduino board. The positive leg must be connected to PIN 9 of the Arduino board (following the code) and the second leg must be connected to the ground</p>
+      	<img src="img/DELModule.png" alt="DELModule" />
+      	<p></p>
+      	<img class="Pic" src="img/DELAssembly.jpg" alt="DELAssembly" />
+      	<p>Here, I put the assembly in a sheath to avoid short circuit. And, for the sake of size, cables were taken from the PIN 5V and GND of the Arduino board</p>
+      </article>
+      <header><h3>Sensor module</h3></header>
+      <article>
+      	<p>For the sensor assembly, pay close attention to the diagram. the two cables pass through a capacitor in parallel. One is divided into two, connected to PIN 2 on the arduino board, and the other will go through a series resistor which will be connected to GND. The second cable is connected to the PIN 5V.</p>
+      	<img class="Pic" src="img/Capteur.png" alt="SensorModule" />
+      	<p></p>
+      	<img class="Pic" src="img/SensorModule.jpg" alt="SensorAssembly" />
+      	<p>The module have been put in a sheath to avoid short circuits once again. Indeed, I have my modules as "sandwiches" to save as much space as possible.</p>
+      </article>
+      <header><h3>Bluetooth module</h3></header>
+      <article>
+      	<p>The bluetooth module only needs to be connected to the Arduino board. The VCC and GND PINs are connected by cables pulled from the Arduino board. The PIN RXD of the Bluetooth card must be linked to the PIN TX and the PIN TDX to the PIN RX.</p>
+      	<img class="Pic" src="img/BluetoothAssembly.jpg" alt="BluetoothAssembly" />
+      	<p>The blue cables are used here to indicate that they are the communication cables.</p>
+      </article>
+      <header><h3>Battery wiring</h3></header>
+      <article>
+        <p>The battery wires get through a small whole in the module wall. The ground wire is directly connected to the Arduino ground. The VIN wire get trough a switch, and then, is wired to the 9V Arduino PIN.</p>
+        <img class="Pic" src="img/Battery_wiring.jpg" alt="Battery Wiring" />
+      </article>
+      <header><h3>Sensor wiring</h3></header>
+      <article>
+        <p>The sensor use the sensor module previously made. The positive wire is soldered to a connector, and the same for the ground one.</p>
+        <img class="Pic" src="img/Sensor_wiring.jpg" alt="Sensor Wiring" />
+      </article>
+    </section>
+    <section class="main-section" id="Script">
+      <header><h2>Script</h2></header>
+      <article>
+      	<header>chrono.js</header>
+      	<code class="fichier">var start = 0
+var end = 0
+var diff = 0
+var timerID = 0
+
+/**
+* chrono(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre de mettre à jour
+* sa valeur
+*/
+function chrono(idChrono){
+    end = new Date()        // |
+    diff = end - start      // | calcule du temps passé
+    diff = new Date(diff)   // |
+    var msec = diff.getMilliseconds() // |
+    var sec = diff.getSeconds()       // | Mise à jour de la valeur du chorno
+    var min = diff.getMinutes()       // |
+    if (min < 10){              // |
+        min = "0" + min         // | min sous le format xx
+    }                           // |
+    if (sec < 10){              // |
+        sec = "0" + sec         // | sec sous le format xx
+    }                           // |
+    if(msec < 10){              // |
+        msec = "00" +msec       // |
+    }                           // |msec sous le format xxx
+    else if(msec < 100){        // |
+        msec = "0" +msec        // |
+    }
+    Dom.set(idChrono, min + ":" + sec + ":" + msec) // | format xx:xx:xxx
+    timerID = setTimeout("chrono('"+idChrono+"')", 10)
+}
+
+/**
+* chronoStart(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre de démarer un chrono
+*/
+function chronoStart(idChrono){
+    start = new Date() // Démare le chrono
+    chrono(idChrono)   // Lance la fonction chrono
+}
+
+/**
+* chronoContinue(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre de retrouver la nouvelle valeur du chrono
+*/
+function chronoContinue(idChrono){
+    start = new Date()-diff // |
+    start = new Date(start) // | Retrouve la nouvelle valeur du chrono
+    chrono(idChrono)        // Lance la fonction chrono
+}        
+
+/**
+* chronoStop() est une fonction qui permet de libérer la mémoire
+* des timers
+*/
+function chronoStop(){
+    clearTimeout(timerID) // libère la mémoire
+}
+
+/**
+* chronoReset(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre d'être remise à zéro
+*/
+function chronoReset(idChrono){
+    Dom.set(idChrono, "00:00:000") // met le chrono à zéro ("00:00:000")
+    start = new Date()             // relance le chrono
+}
+
+/**
+* chronoReset(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre d'être remise à zéro
+* et d'être arréter
+*/
+function chronoStopReset(idChrono){
+    clearTimeout(timerID)               // libère la mémoire timer
+    Dom.set(idChrono, "00:00:000")      // met le chrono à zéro ("00:00:000")
+}
+
+/**
+* chronoGet(idChrono) est une fonction qui permet à partir
+* d'une instance chrono placé en paramètre d'afficher sa valeur
+* (voir la fonction chrono pour plus de détails)
+*/
+function chronoGet(idChrono){
+    var msec = diff.getMilliseconds()
+    var sec = diff.getSeconds()
+    var min = diff.getMinutes()
+    if (min < 10){
+        min = "0" + min
+    }
+    if (sec < 10){
+        sec = "0" + sec
+    }
+    if(msec < 10){
+        msec = "00" +msec
+    }
+    else if(msec < 100){
+        msec = "0" +msec
+    }
+    Dom.set(idChrono, min + ":" + sec + ":" + msec)
+}</code>
+	  <header>game.js</header>
+      	<code class="fichier">var fps             = 60;                           // how many 'update' frames per second
+var step            = 1/fps;                        // how long is each frame (in seconds)
+var width           = 1024;                         // logical canvas width
+var height          = 768;                          // logical canvas height
+var canvas1         = Dom.get('canvas1');           // canvas for player1...
+var context1        = canvas1.getContext('2d');     // ...and its drawing context
+var canvas2         = Dom.get('canvas2');           // canvas for player2...
+var context2        = canvas2.getContext('2d');     // ...and its drawing context
+var background      = null;                         // our background image (loaded below)
+var sprites         = null;                         // our spritesheet (loaded below)
+var resolution      = null;                         // scaling factor to provide resolution independence (computed)
+var roadWidth       = 2000;                         // actually half the roads width, easier math if the road spans from -roadWidth to +roadWidth
+var segmentLength   = 100;                          // length of a single segment
+var rumbleLength    = 3;                            // number of segments per rumble strip
+var trackLength     = null;                         // z length of entire track (computed)
+var finishLineDist  = app.options.distance;         // distance between start and finish line (in meters)
+var nbOfSegments    =                               // number of segments between start and finish line (3.64/m or 3640/km)
+    Math.round(3.64*finishLineDist);
+var lanes           = 2;                            // number of lanes
+var fieldOfView     = 100;                          // angle (degrees) for field of view
+var cameraHeight    = 1000;                         // z height of camera
+var cameraDepth     = null;                         // z distance camera is from screen (computed)
+var drawDistance    = 300;                          // number of segments to draw
+var fogDensity      = 5;                            // exponential fog density
+var maxSpeed        = segmentLength/step;           // top speed (ensure we can't move more than 1 segment in a single frame)
+var roadStyle       =                               // if set to false, will display a 400m running track style
+    app.options.styleTerrain == "road";
+
+// variables relative to Player1
+var Player1 = {
+    X: -0.5,                                        // Player1 x offset from center of road (-1 to 1 to stay independent of roadWidth)
+    Z: null,                                        // Player1 relative z distance from camera (computed)
+    position: 0,                                    // current camera Z position for Player1 (add Player1.Z to get Player1's absolute Z position)
+    speed: 0,                                       // current Player1's speed
+    topspeed: 0,                                    // Player1's top speed
+    segments: [],                                   // array of road segments for Player1
+    renderedColor: app.options.joueur1couleur,      // color of the rendered car for Player1 (default is RED)
+    renderingStraight: null,
+    renderingLeft: null,
+    renderingRight: null,
+    malus: app.options.joueur1difficulte,           // multiply the distance Player1 has to travel to reach the finish line
+    hasFinished: false,                             // boolean marker to tell whether or not Player1 crossed the line
+    delta: 0                                        // distance Player1 still needs to travel
+}
+
+// variables relative to Player2
+var Player2 = {
+    X: 0.5,                                         // Player2 x offset from center of road (-1 to 1 to stay independent of roadWidth)
+    Z: null,                                        // Player2 relative z distance from camera (computed)
+    position: 0,                                    // current camera Z position for Player2 (add Player2.Z to get Player2's absolute Z position)
+    speed: 0,                                       // current Player2's speed
+    topspeed: 0,                                    // Player2's top speed
+    segments: [],                                   // array of road segments for 
+    renderedColor: app.options.joueur2couleur,      // color of the rendered car for Player2 (default is RED)
+    renderingStraight: null,
+    renderingLeft: null,
+    renderingRight: null,
+    malus: app.options.joueur2difficulte,           // multiply the distance Player2 has to travel to reach the finish line
+    hasFinished: false,                             // boolean marker to tell whether or not Player2 crossed the line
+    delta: 0                                        // distance Player2 still needs to travel
+}
+
+var smoothingDelay = 2,                             // number of steps needed before an update of a Player's position
+    resetDelay = smoothingDelay;                    // fixed variable used to reset the value of smoothingDelay
+
+
+//=========================================================================
+//                        UPDATE THE GAME WORLD
+//=========================================================================
+
+function update(dt) {
+    
+    smoothingDelay--;
+
+    // updates both delta
+    if(isNaN(parseInt(Dom.get('distance1').innerHTML))) Player1.delta = 0;
+    else Player1.delta = (parseInt(Dom.get('distance1').innerHTML)*nbOfSegments/finishLineDist*100)/Player1.malus - Player1.position;
+
+    if(isNaN(parseInt(Dom.get('distance2').innerHTML))) Player2.delta = 0; 
+    else Player2.delta = (parseInt(Dom.get('distance2').innerHTML)*nbOfSegments/finishLineDist*100)/Player2.malus - Player2.position;
+    
+    // travel distance on required frames only
+    if( smoothingDelay <= 0 ){
+        if( Player1.delta > 0 )
+            if( (Player1.position = Util.increase(Player1.position, Player1.delta*(segmentLength/1000), trackLength)) > nbOfSegments*segmentLength -1 ) Player1.hasFinished = true;
+        if( Player2.delta > 0 )
+            if( (Player2.position = Util.increase(Player2.position, Player2.delta*(segmentLength/1000), trackLength)) > nbOfSegments*segmentLength -1 ) Player2.hasFinished = true;
+        smoothingDelay = resetDelay;
+    }
+
+    if(isNaN(Player1.speed = parseFloat(Dom.get('vitesse1').textContent)*segmentLength)) Player1.speed = 0;
+    if(isNaN(Player2.speed = parseFloat(Dom.get('vitesse2').textContent)*segmentLength)) Player2.speed = 0;
+
+}
+
+function updatehud(){
+
+    if(!Player1.hasFinished){                                           // while Player1 has not finished the race
+        Dom.set('chronoPlayer1', Dom.get('chronotime').innerHTML);              // chrono running for Player1
+        if(Player1.topspeed < Player1.speed){
+            Player1.topspeed = Player1.speed;                                   // save top speed for Player1
+            Dom.set('topspeedPlayer1', Player1.topspeed/segmentLength);         // display top speed for Player1
+        }
+    }                                                                   // when Player1 has finished the race
+    else Dom.set('chronoPlayer1', Dom.get('chrono1').innerHTML);                // get the accurate time for Player1
+
+    if(!Player2.hasFinished){                                           // while Player2 has not finished the race
+        Dom.set('chronoPlayer2', Dom.get('chronotime').innerHTML);              // chrono running for Player2
+        if(Player2.topspeed < Player2.speed){
+            Player2.topspeed = Player2.speed;                                   // save top speed for Player2
+            Dom.set('topspeedPlayer2', Player2.topspeed/segmentLength);         // display top speed for Player2
+        }
+    }                                                                   // when Player2 has finished the race
+    else Dom.set('chronoPlayer2', Dom.get('chrono2').innerHTML);                // get the accurate time for Player2
+    
+    // continuous displays
+    Dom.set('distancePlayer1', Math.round((Player1.position/nbOfSegments*finishLineDist/segmentLength)*Player1.malus));         // distance travelled by Player1
+    Dom.set('distancebubblePlayer1', Math.round((Player1.position/nbOfSegments*finishLineDist/segmentLength)*Player1.malus));   // display distance in distance bubble for Player1
+    Dom.set('distancePlayer2', Math.round((Player2.position/nbOfSegments*finishLineDist/segmentLength)*Player2.malus));         // distance travelled by Player2
+    Dom.set('distancebubblePlayer2', Math.round((Player2.position/nbOfSegments*finishLineDist/segmentLength)*Player2.malus));   // display distance in distance bubble for Player2
+    Dom.set('speedPlayer1', Player1.speed/segmentLength);                                                                       // continuously display speed for Player1
+    Dom.set('speedbubblePlayer1', Math.floor(Player1.speed/segmentLength));                                                     // display speed in speed bubble for Player1        
+    Dom.set('speedPlayer2', Player2.speed/segmentLength);                                                                       // continuously display speed for Player2
+    Dom.set('speedbubblePlayer2', Math.floor(Player2.speed/segmentLength));                                                     // display speed in speed bubble for Player2
+
+}
+
+//=========================================================================
+//                      RENDER THE GAME WORLD
+//=========================================================================
+
+function render() {
+
+    var player1BaseSegment = findSegment(Player1.position, Player1.segments);
+    var player2BaseSegment = findSegment(Player2.position, Player2.segments);
+
+    // start by clearing everything
+    context1.clearRect(0, 0, width, height);
+    context2.clearRect(0, 0, width, height);
+
+    // render background for both canvas
+    Render.background(context1, background, width, height, BACKGROUND.SKY);
+    Render.background(context1, background, width, height, BACKGROUND.HILLS);
+    Render.background(context1, background, width, height, BACKGROUND.TREES);
+
+    Render.background(context2, background, width, height, BACKGROUND.SKY);
+    Render.background(context2, background, width, height, BACKGROUND.HILLS);
+    Render.background(context2, background, width, height, BACKGROUND.TREES);
+
+    var n, player1Segment, player2Segment;
+
+    for(n = 0; n < drawDistance; n++){      // render everything up to the drawDistance limit
+
+    player1Segment        = Player1.segments[(player1BaseSegment.index + n) % Player1.segments.length];
+    player1Segment.looped = player1Segment.index < player1BaseSegment.index;
+    player1Segment.fog    = Util.exponentialFog(n/drawDistance, fogDensity);
+
+    player2Segment        = Player2.segments[(player2BaseSegment.index + n) % Player2.segments.length];
+    player2Segment.looped = player2Segment.index < player2BaseSegment.index;
+    player2Segment.fog    = Util.exponentialFog(n/drawDistance, fogDensity);
+
+    Util.project(player1Segment.p1, (Player1.X * roadWidth), cameraHeight, Player1.position - (player1Segment.looped ? trackLength : 0), cameraDepth, width, height, roadWidth);
+    Util.project(player1Segment.p2, (Player1.X * roadWidth), cameraHeight, Player1.position - (player1Segment.looped ? trackLength : 0), cameraDepth, width, height, roadWidth);
+
+    Util.project(player2Segment.p1, (Player2.X * roadWidth), cameraHeight, Player2.position - (player2Segment.looped ? trackLength : 0), cameraDepth, width, height, roadWidth);
+    Util.project(player2Segment.p2, (Player2.X * roadWidth), cameraHeight, Player2.position - (player2Segment.looped ? trackLength : 0), cameraDepth, width, height, roadWidth);
+
+
+    if( (player1Segment.p1.camera.z <= cameraDepth) && (player2Segment.p1.camera.z <= cameraDepth) ) // no need to render segments behind us
+        continue;
+
+    // render all segments for Player1
+    Render.segment(context1, width,
+                    player1Segment.p1.screen.x,
+                    player1Segment.p1.screen.y,
+                    player1Segment.p1.screen.w,
+                    player1Segment.p2.screen.x,
+                    player1Segment.p2.screen.y,
+                    player1Segment.p2.screen.w,
+                    player1Segment.fog,
+                    player1Segment.color);
+
+    // render all segments for Player2
+    Render.segment(context2, width,
+                    player2Segment.p1.screen.x,
+                    player2Segment.p1.screen.y,
+                    player2Segment.p1.screen.w,
+                    player2Segment.p2.screen.x,
+                    player2Segment.p2.screen.y,
+                    player2Segment.p2.screen.w,
+                    player2Segment.fog,
+                    player2Segment.color);               
+
+    }
+
+    // rendering Player1 on own screen
+    Render.player(context1, width, resolution, roadWidth, sprites, Player1.renderingStraight,
+                    Player1.speed/maxSpeed, cameraDepth/Player1.Z, width/2, height);
+
+
+    if(Player2.position-Player1.position < 12000){                                                          // don't render the other player if he's too far (fog effect)
+        Render.sprite(context1, width, roadWidth, sprites, Player2.renderingLeft,                               // rendering Player2's position on Player1's screen
+                    cameraDepth/Player2.Z/(Player2.position-Player1.position)*550, 
+                    width/2, height, 
+                    2, 
+                    1-3.4*(Player2.position-Player1.position)/height + (0.01 * Math.random() * Player2.speed/maxSpeed * resolution) * Util.randomChoice([-1,1]));
+    }
+
+    // rendering player2 on own screen
+    Render.player(context2, width, resolution, roadWidth, sprites, Player2.renderingStraight,
+                    Player2.speed/maxSpeed, cameraDepth/Player2.Z, width/2, height);
+
+                
+    if(Player1.position-Player2.position < 12000){                                                          // don't render the other player if he's too far (fog effect)
+        Render.sprite(context2, width, roadWidth, sprites, Player1.renderingRight,                              // rendering Player1's position on Player2's screen
+                    (cameraDepth/Player1.Z)/(Player1.position-Player2.position)*550, 
+                    width/2, height, 
+                    -3, 
+                    1-3.4*(Player1.position-Player2.position)/height + (0.01 * Math.random() * Player1.speed/maxSpeed * resolution) * Util.randomChoice([-1,1]));
+    }
+
+}
+
+//=========================================================================
+//                            BUILD ROAD GEOMETRY
+//=========================================================================
+
+function resetRoad() {
+
+    Player1.segments = [];
+    Player2.segments = [];
+    var fullTrackLength = nbOfSegments + 364;           // 364 segments corresponds to 100m, used to have a decent road length in case nbOfSegments is close or equal to 0
+    
+    for(var n = 0; n < fullTrackLength; n++) {
+        Player1.segments.push({
+            index: n,
+            p1: { world: { z:  n   *segmentLength }, camera: {}, screen: {} },
+            p2: { world: { z: (n+1)*segmentLength }, camera: {}, screen: {} },
+            sprites: [],
+            color: roadStyle? Math.floor(n/rumbleLength)%2 ? COLORS.DARK : COLORS.LIGHT : Math.floor(n/rumbleLength)%2 ? COLORS.ATHDARK : COLORS.ATHLIGHT     // road style or 400m style
+        });
+        Player2.segments.push({
+            index: n,
+            p1: { world: { z:  n   *segmentLength }, camera: {}, screen: {} },
+            p2: { world: { z: (n+1)*segmentLength }, camera: {}, screen: {} },
+            sprites: [],
+            color: roadStyle? Math.floor(n/rumbleLength)%2 ? COLORS.DARK : COLORS.LIGHT : Math.floor(n/rumbleLength)%2 ? COLORS.ATHDARK : COLORS.ATHLIGHT     // road style or 400m style
+        });
+    }
+    
+    for(var n = 0; n < rumbleLength; n++){
+    Player1.segments[findSegment(Player1.Z, Player1.segments).index + 4 + n].color = COLORS.START;                    // starting line
+    Player2.segments[findSegment(Player2.Z, Player2.segments).index + 4 + n].color = COLORS.START;                    // starting line
+
+    Player1.segments[findSegment(Player1.Z, Player1.segments).index + nbOfSegments-2 + n].color = COLORS.FINISH;      // finish line
+    Player2.segments[findSegment(Player2.Z, Player2.segments).index + nbOfSegments-2 + n].color = COLORS.FINISH;      // finish line
+    }
+    trackLength = Player1.segments.length * segmentLength;
+
+}
+
+
+function findSegment(z, segments) {
+    return segments[Math.floor(z/segmentLength) % segments.length];
+}
+
+function addSprite(n, sprite, offset) {
+    Player1.segments[n].sprites.push({ source: sprite, offset: offset });
+    Player2.segments[n].sprites.push({ source: sprite, offset: offset });
+}
+
+
+//=========================================================================
+//                       RENDERING COLORS FOR PLAYERS
+//=========================================================================
+
+function loadColor(){
+
+    switch(Player1.renderedColor){
+        case 'RED':
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.RED;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.RED;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.RED;
+            break;
+        case 'BLUE': 
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.BLUE;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.BLUE;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.BLUE;
+            break;
+        case 'GREEN': 
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.GREEN;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.GREEN;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.GREEN;
+            break;
+        case 'YELLOW':
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.YELLOW;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.YELLOW;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.YELLOW;
+            break;
+        case 'PINK':
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.PINK;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.PINK;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.PINK;
+            break;
+        case 'CYAN':
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.CYAN;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.CYAN;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.CYAN;
+            break;
+        case 'ORANGE':
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.ORANGE;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.ORANGE;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.ORANGE;
+            break;
+        default:
+            Player1.renderingStraight = SPRITES.PLAYER_STRAIGHT.RED;
+            Player1.renderingLeft = SPRITES.PLAYER_LEFT.RED;
+            Player1.renderingRight = SPRITES.PLAYER_RIGHT.RED;
+    }
+
+    switch(Player2.renderedColor){
+        case 'RED':
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.RED;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.RED;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.RED;
+            break;
+        case 'BLUE': 
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.BLUE;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.BLUE;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.BLUE;
+            break;
+        case 'GREEN': 
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.GREEN;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.GREEN;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.GREEN;
+            break;
+        case 'YELLOW':
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.YELLOW;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.YELLOW;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.YELLOW;
+            break;
+        case 'PINK':
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.PINK;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.PINK;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.PINK;
+            break;
+        case 'CYAN':
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.CYAN;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.CYAN;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.CYAN;
+            break;
+        case 'ORANGE':
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.ORANGE;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.ORANGE;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.ORANGE;
+            break;
+        default:
+            Player2.renderingStraight = SPRITES.PLAYER_STRAIGHT.RED;
+            Player2.renderingLeft = SPRITES.PLAYER_LEFT.RED;
+            Player2.renderingRight = SPRITES.PLAYER_RIGHT.RED;
+    }
+
+}
+
+//=========================================================================
+//                            THE GAME LOOP
+//=========================================================================
+
+Game.run({
+    canvas: canvas1, loadColor: loadColor, render: render, update: update, updatehud: updatehud, step: step,
+    images: ["background", "sprites"],
+    ready: function(images) {
+    background = images[0];
+    sprites    = images[1];
+    reset();
+    },
+});
+
+function reset(options) {
+    options                = options || {};
+    canvas1.width          = canvas2.width  = width  = Util.toInt(options.width,          width);
+    canvas1.height         = canvas2.height = height = Util.toInt(options.height,         height);
+    lanes                  = Util.toInt(options.lanes,          lanes);
+    roadWidth              = Util.toInt(options.roadWidth,      roadWidth);
+    cameraHeight           = Util.toInt(options.cameraHeight,   cameraHeight);
+    drawDistance           = Util.toInt(options.drawDistance,   drawDistance);
+    fogDensity             = Util.toInt(options.fogDensity,     fogDensity);
+    fieldOfView            = Util.toInt(options.fieldOfView,    fieldOfView);
+    segmentLength          = Util.toInt(options.segmentLength,  segmentLength);
+    rumbleLength           = Util.toInt(options.rumbleLength,   rumbleLength);
+    cameraDepth            = 1 / Math.tan((fieldOfView/2) * Math.PI/180);
+    Player1.Z              = (cameraHeight * cameraDepth);
+    Player2.Z              = (cameraHeight * cameraDepth);
+    resolution             = height/480;
+
+    if ((Player1.segments.length==0) || (Player2.segments.length==0) || (options.segmentLength) || (options.rumbleLength))
+    resetRoad();                                                                                              // only rebuild road when necessary
+</code>
+       
+        
+	<header>gamehelpersandconstants.js</header>
+		<code class="fichier">//=========================================================================
+//                        minimalist DOM helpers
+//=========================================================================
+
+var Dom = {
+
+  get:  function(id)                     { return ((id instanceof HTMLElement) || (id === document)) ? id : document.getElementById(id); },
+  set:  function(id, html)               { Dom.get(id).innerHTML = html;                        },
+  on:   function(ele, type, fn, capture) { Dom.get(ele).addEventListener(type, fn, capture);    },
+
+}
+
+//=========================================================================
+//                general purpose helpers (mostly maths)
+//=========================================================================
+
+var Util = {
+
+  timestamp:        function()                  { return new Date().getTime();                                    },
+  toInt:            function(obj, def)          { if (obj !== null) { var x = parseInt(obj, 10); if (!isNaN(x)) return x; } return Util.toInt(def, 0); },
+  toFloat:          function(obj, def)          { if (obj !== null) { var x = parseFloat(obj);   if (!isNaN(x)) return x; } return Util.toFloat(def, 0.0); },
+  randomInt:	      function(min,max)	          { return Math.floor(Math.random() * Math.floor(max-min+1)) + min; },
+  randomChoice:     function(options)           { return options[Util.randomInt(0, options.length-1)];            },
+  exponentialFog:   function(distance, density) { return 1 / (Math.pow(Math.E, (distance * distance * density))); },
+
+  increase:  function(start, increment, max) { // with looping but not useful yet
+    var result = start + increment;
+    while (result >= max)
+      result -= max;
+    while (result < 0)
+      result += max;
+    return result;
+  },
+
+  project: function(p, cameraX, cameraY, cameraZ, cameraDepth, width, height, roadWidth) {
+    p.camera.x     = (p.world.x || 0) - cameraX;
+    p.camera.y     = (p.world.y || 0) - cameraY;
+    p.camera.z     = (p.world.z || 0) - cameraZ;
+    p.screen.scale = cameraDepth/p.camera.z;
+    p.screen.x     = Math.round((width/2)  + (p.screen.scale * p.camera.x  * width/2));
+    p.screen.y     = Math.round((height/2) - (p.screen.scale * p.camera.y  * height/2));
+    p.screen.w     = Math.round(             (p.screen.scale * roadWidth   * width/2));
+  }
+
+}
+
+//=========================================================================
+//                  POLYFILL for requestAnimationFrame
+//=========================================================================
+
+if (!window.requestAnimationFrame) { // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+  window.requestAnimationFrame = window.webkitRequestAnimationFrame || 
+                                 window.mozRequestAnimationFrame    || 
+                                 window.oRequestAnimationFrame      || 
+                                 window.msRequestAnimationFrame     || 
+                                 function(callback, element) {
+                                   window.setTimeout(callback, 1000 / 60);
+                                 }
+}
+
+
+
+//=========================================================================
+//                          GAME LOOP helpers
+//=========================================================================
+
+var Game = {
+
+  run: function(options) {
+
+    Game.loadImages(options.images, function(images) {
+
+      options.ready(images);  // tell caller to initialize itself with loaded images
+      
+      options.loadColor();    // initialize models with their respective color
+
+      var canvas = options.canvas,        // canvas render target is provided by caller
+          update = options.update,        // method to update game logic is provided by caller
+          updatehud = options.updatehud,  // method to update hud is provided by caller
+          render = options.render,        // method to render game is provided by caller
+          step   = options.step,          // fixed frame step (1/fps) is specified by caller
+          now    = null,
+          last   = Util.timestamp(),
+          dt     = 0,
+          gdt    = 0;
+
+      function frame() {
+        now = Util.timestamp();
+        dt  = Math.min(1, (now - last) / 1000);
+        gdt = gdt + dt;
+        while (gdt > step) {
+          gdt = gdt - step;
+          update(step);
+        }
+        render();
+        updatehud();
+        last = now;
+        requestAnimationFrame(frame, canvas);
+      }
+        frame();  // calling itself in a recursive way to start the loop
+    });
+  },
+
+  //---------------------------------------------------------------------------
+
+  loadImages: function(names, callback) { // load multiple images and callback when ALL images have loaded
+    var result = [];
+    var count  = names.length;
+
+    var onload = function() {
+      if (--count == 0)
+        callback(result);
+    };
+
+    for(var n = 0 ; n < names.length ; n++) {
+      var name = names[n];
+      result[n] = document.createElement('img');
+      Dom.on(result[n], 'load', onload);
+      result[n].src = "images/" + name + ".png";
+    }
+  }
+
+}
+
+//=========================================================================
+//                        canvas rendering helpers
+//=========================================================================
+
+var Render = {
+
+  polygon: function(ctx, x1, y1, x2, y2, x3, y3, x4, y4, color) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.lineTo(x3, y3);
+    ctx.lineTo(x4, y4);
+    ctx.closePath();
+    ctx.fill();
+  },
+
+  //---------------------------------------------------------------------------
+
+  segment: function(ctx, width, x1, y1, w1, x2, y2, w2, fog, color) {
+
+    var r1 = w1/6,          // épaisseur des
+        r2 = w2/6 ,         // bandes externes
+        l1 = w1/12,         // épaisseur de la
+        l2 = w2/12;         // bande du milieu
+    
+    ctx.fillStyle = color.grass;
+    ctx.fillRect(0, y2, width, y1 - y2);
+    
+    Render.polygon(ctx, x1-w1-r1, y1, x1-w1, y1, x2-w2, y2, x2-w2-r2, y2, color.rumble);
+    Render.polygon(ctx, x1+w1+r1, y1, x1+w1, y1, x2+w2, y2, x2+w2+r2, y2, color.rumble);
+    Render.polygon(ctx, x1-w1,    y1, x1+w1, y1, x2+w2, y2, x2-w2,    y2, color.road);
+    
+    if (color.lane) {
+      Render.polygon(ctx, x1 - l1/2, y1, x1 + l1/2, y1, x2 + l2/2, y2, x2 - l2/2, y2, color.lane);
+    }
+    
+    Render.fog(ctx, 0, y1, width, y2-y1, fog);
+  },
+
+  //---------------------------------------------------------------------------
+
+  background: function(ctx, background, width, height, layer, rotation, offset) {
+
+    rotation = rotation || 0;
+    offset   = offset   || 0;
+
+    var imageW = layer.w/2;
+    var imageH = layer.h;
+
+    var sourceX = layer.x + Math.floor(layer.w * rotation);
+    var sourceY = layer.y
+    var sourceW = Math.min(imageW, layer.x+layer.w-sourceX);
+    var sourceH = imageH;
+    
+    var destX = 0;
+    var destY = offset;
+    var destW = Math.floor(width * (sourceW/imageW));
+    var destH = height;
+
+    ctx.drawImage(background, sourceX, sourceY, sourceW, sourceH, destX, destY, destW, destH);
+    if (sourceW < imageW)
+      ctx.drawImage(background, layer.x, sourceY, imageW-sourceW, sourceH, destW-1, destY, width-destW, destH);
+  },
+
+  //---------------------------------------------------------------------------
+
+  sprite: function(ctx, width, roadWidth, sprites, sprite, scale, destX, destY, offsetX, offsetY, clipY) {
+
+                    //  scale for projection AND relative to roadWidth (for tweakUI)
+    var destW  = (sprite.w * scale * width/2) * (SPRITES.SCALE * roadWidth);
+    var destH  = (sprite.h * scale * width/2) * (SPRITES.SCALE * roadWidth);
+
+    destX = destX + (destW * (offsetX || 0));
+    destY = destY + (destH * (offsetY || 0));
+
+    var clipH = clipY ? Math.max(0, destY+destH-clipY) : 0;
+    if (clipH < destH)
+      ctx.drawImage(sprites, sprite.x, sprite.y, sprite.w, sprite.h - (sprite.h*clipH/destH), destX, destY, destW, destH - clipH);
+
+  },
+
+  //---------------------------------------------------------------------------
+
+  player: function(ctx, width, resolution, roadWidth, sprites, spriteStyle, speedPercent, scale, destX, destY) {
+
+    var bounce = (1.5 * Math.random() * speedPercent * resolution) * Util.randomChoice([-1,1]);
+
+    Render.sprite(ctx, width, roadWidth, sprites, spriteStyle, scale, destX, destY + bounce, -0.5, -1);
+  },
+
+  //---------------------------------------------------------------------------
+
+  fog: function(ctx, x, y, width, height, fog) {
+    if (fog < 1) {
+      ctx.globalAlpha = (1-fog)
+      ctx.fillStyle = COLORS.FOG;
+      ctx.fillRect(x, y, width, height);
+      ctx.globalAlpha = 1;
+    }
+  },
+
+}
+
+//=============================================================================
+//                          RACING GAME CONSTANTS
+//=============================================================================
+
+var COLORS = {
+  SKY:  '#72D7EE',
+  TREE: '#005108',
+  FOG:  '#005108',
+  ATHLIGHT: { road: '#9f5041', grass: '#10AA10', rumble: '#CCCCCC', lane: '#CCCCCC' },     // road: #9f5041 for an olympic 400m style
+  ATHDARK:  { road: '#9c5041', grass: '#009A00', rumble: '#CCCCCC', lane: '#CCCCCC' },
+  LIGHT:    { road: '#6B6B6B', grass: '#10AA10', rumble: '#555555', lane: '#CCCCCC' },
+  DARK:     { road: '#696969', grass: '#009A00', rumble: '#BBBBBB'                  },
+  START:    { road: '#CCCCCC', grass: '#10AA10', rumble: '#CCCCCC'                  },
+  FINISH:   { road: '#CCCCCC', grass: '#10AA10', rumble: '#CCCCCC'                  }
+};
+
+//---------------------------------------------------------------------------
+
+var BACKGROUND = {
+  HILLS: { x:   5, y:   5, w: 1280, h: 480 },
+  SKY:   { x:   5, y: 495, w: 1280, h: 480 },
+  TREES: { x:   5, y: 985, w: 1280, h: 480 }
+};
+
+//---------------------------------------------------------------------------
+
+var SPRITES = {  
+  PLAYER_LEFT: {
+    RED:    { x:  0,    y: 0,   w: 80, h: 41},
+    BLUE:   { x:  0,    y: 51,  w: 80, h: 41},
+    GREEN:  { x:  0,    y: 102, w: 80, h: 41},
+    YELLOW: { x:  0,    y: 153, w: 80, h: 41},
+    PINK:   { x:  0,    y: 204, w: 80, h: 41},
+    CYAN:   { x:  0,    y: 255, w: 80, h: 41},
+    ORANGE: { x:  0,    y: 306, w: 80, h: 41}
+  },
+
+  PLAYER_STRAIGHT: {
+    RED:    { x:  91,   y: 0,   w: 80, h: 41},
+    BLUE:   { x:  91,   y: 51,  w: 80, h: 41},
+    GREEN:  { x:  91,   y: 102, w: 80, h: 41},
+    YELLOW: { x:  91,   y: 153, w: 80, h: 41},
+    PINK:   { x:  91,   y: 204, w: 80, h: 41},
+    CYAN:   { x:  91,   y: 255, w: 80, h: 41},
+    ORANGE: { x:  91,   y: 306, w: 80, h: 41}
+  },
+
+  PLAYER_RIGHT: {
+    RED:    { x:  182,  y: 0,   w: 80, h: 41},
+    BLUE:   { x:  182,  y: 51,  w: 80, h: 41},
+    GREEN:  { x:  182,  y: 102, w: 80, h: 41},
+    YELLOW: { x:  182,  y: 153, w: 80, h: 41},
+    PINK:   { x:  182,  y: 204, w: 80, h: 41},
+    CYAN:   { x:  182,  y: 255, w: 80, h: 41},
+    ORANGE: { x:  182,  y: 306, w: 80, h: 41}
+  }
+};
+
+SPRITES.SCALE = 0.3 * (1/SPRITES.PLAYER_STRAIGHT.RED.w) // the reference sprite width should be 1/3rd the (half-)roadWidth</code>
+		<header>app.js</header>
+		<code class="fichier">var toggleGetInfos = false;
+var toggleGetChrono1 = true;
+var toggleGetChrono2 = true;
+var rayon;                                      // en mm
+var distanceTotale;                             // en m
+var distanceParcourue1 = 0;                     // en m
+var distanceParcourue2 = 0;                     // en m
+var progression1 = 0;                           // en %
+var progression2 = 0;                           // en %
+var vitesse1 = 0;                               // en km/h
+var vitesse2 = 0;                               // en km/h
+var vitesseMax1 = 0;                            // en km/h
+var vitesseMax2 = 0;                            // en km/h
+var difficulte1;
+var difficulte2;
+var intervalID = 0;
+var timeOutID = 0;
+var compteur1 = 0;
+var compteur2 = 0;
+var frequenceUpdateVitesse = 500;               // en ms
+var joueur1;
+var joueur2;
+var gagnant = "";
+var timerCountdown = 5;
+var persistenceCountDown = 2;
+
+// load variables from app.options
+rayon = app.options.rayon;
+distanceTotale = app.options.distance;
+if( (joueur1 = app.options.joueur1nom) == "" ) joueur1 = "joueur 1";
+if( (joueur2 = app.options.joueur2nom) == "" ) joueur2 = "joueur 2";
+difficulte1 = app.options.joueur1difficulte;
+difficulte2 = app.options.joueur2difficulte;
+
+
+app.canGetInfos = function(){
+    if(!toggleGetInfos){
+        toggleGetInfos = true;
+        Dom.get('optionsMenu').style.display = "none";              // hide optionsMenu and disconnectButton so they can't get used during the race
+        Dom.get('disconnectButton').style.display = "none";
+        Dom.set('getInfos', "Arreter");                             // turn getInfos button from a starter to an ender 
+        Dom.get('getInfos').className = "red wide";
+        app.countDown(timerCountdown, persistenceCountDown);        // start countdown to get ready for the race
+        //app.pretpartez(timerCountdown, persistenceCountDown);
+        timeOutID = setTimeout(function() {                         // starts the race at the end of countdown
+            window.clearInterval(intervalID);
+            chronoStart('chronotime');
+            app.startGetInfos();                                    // start collecting and processing all bluetooth flow
+        }, timerCountdown*1000);                                        
+    }
+    else{
+        window.clearTimeout(timeOutID);        
+        window.clearInterval(intervalID);
+        bluetoothSerial.unsubscribe();                              // stop collecting and processing all bluetooth flow
+        chronoStopReset('chronotime');
+        app.resetData();                                            // reset all variables and all screen displays accordingly
+    }
+}
+
+app.startGetInfos = function(){
+    bluetoothSerial.read();     // clear buffer before game starts
+    bluetoothSerial.subscribe(';',function(textGotten){
+        if(toggleGetInfos){     // make sure we want to get infos 
+
+            var capteur = textGotten[0];                                // extract the sensor id from the data received (1 or 2)
+            var time = textGotten.split(":")[1].split(";")[0];          // extract time from the data received (in ms)
+
+            ancienneDistanceParcourue1 = distanceParcourue1;
+            ancienneDistanceParcourue2 = distanceParcourue2;
+
+            if(capteur == 1){
+                if(distanceParcourue1 < distanceTotale*difficulte1){
+                        distanceParcourue1+=2*Math.PI*rayon*Math.pow(10, -3); 
+                        vitesse1 = (distanceParcourue1-ancienneDistanceParcourue1)*1000/time*3.6;
+                        if(vitesseMax1 < vitesse1) vitesseMax1 = vitesse1;
+                        if(distanceParcourue1 > distanceTotale*difficulte1) distanceParcourue1 = distanceTotale*difficulte1;
+                }
+                else if(toggleGetChrono1){                  // if player1 is at the finish line and chrono was still running
+                    chronoGet("chrono1");                       // freeze chrono
+                    toggleGetChrono1 = false;                   // turn boolean to false to indicate chrono has been frozen/player is at finish line
+                    if(toggleGetChrono2) gagnant = joueur1;     // if player2's chrono is still running, player1 is the winner
+                }
+                compteur1++;                                // increments on each sensor detection for reedOne
+            }
+            else if(capteur == 2){
+                if(distanceParcourue2 < distanceTotale*difficulte2){
+                        distanceParcourue2+=2*Math.PI*rayon*Math.pow(10, -3);
+                        vitesse2 = (distanceParcourue2-ancienneDistanceParcourue2)*1000/time*3.6;
+                        if(vitesseMax2 < vitesse2) vitesseMax2 = vitesse2;
+                        if(distanceParcourue2 > distanceTotale*difficulte2) distanceParcourue2 = distanceTotale*difficulte2;
+                }
+                else if(toggleGetChrono2){                  // if player2 is at the finish line and chrono was still running
+                    chronoGet("chrono2");                       // freeze chrono
+                    toggleGetChrono2 = false;                   // turn boolean to false to indicate chrono has been frozen/player is at finish line
+                    if(toggleGetChrono1) gagnant = joueur2;     // if player1's chrono is still running, player2 is the winner
+                }
+                compteur2++;                                // increments on each sensor detection for reedTwo
+            }
+            
+            // increments progressions from 0% to 100% based on distance travelled by each player
+            progression1 = (distanceParcourue1*100/distanceTotale)/difficulte1;
+            progression2 = (distanceParcourue2*100/distanceTotale)/difficulte2;
+
+            // updates all displays for player1
+            Dom.get('grad1pic').style.top = 200 - 1.7*progression1 + "px";
+            Dom.get('grad1').getElementsByClassName("bar")[0].style.height = progression1 + "%";
+            Dom.get('grad1').getElementsByClassName("status")[0].textContent = Math.floor(progression1) + "%";
+
+            Dom.set('vitesse1', Math.round(vitesse1*100)/100 + " km/h");
+            Dom.set('distance1', Math.floor(distanceParcourue1) + " m");
+            Dom.set('vmax1', Math.round(vitesseMax1*100)/100 + " km/h");
+
+            // updates all displays for player2
+            Dom.get('grad2pic').style.top = 200 - 1.7*progression2 + "px";
+            Dom.get('grad2').getElementsByClassName("bar")[0].style.height = progression2 + "%";
+            Dom.get('grad2').getElementsByClassName("status")[0].textContent = Math.floor(progression2) + "%";
+
+            Dom.set('vitesse2', Math.round(vitesse2*100)/100 + " km/h");
+            Dom.set('distance2', Math.floor(distanceParcourue2) + " m");
+            Dom.set('vmax2', Math.round(vitesseMax2*100)/100 + " km/h");
+            
+            // when both players reach the end or if one player reached the end before the other one did 10% of the race
+            if(!toggleGetChrono1 && !toggleGetChrono2 || !toggleGetChrono1 && progression2 < 10 || !toggleGetChrono2 && progression1 < 10){
+                chronoStop();
+                Dom.set('chronotime', "Victoire de " + gagnant + " !");
+                Dom.set('displayW1', "Victoire de " + gagnant + " !");
+                Dom.set('displayW2', "Victoire de " + gagnant + " !");
+
+                Dom.get('displayW1').style.fontSize = 7-(gagnant.length/10) + "vw";
+                Dom.get('displayW2').style.fontSize = 7-(gagnant.length/10) + "vw";
+            }
+        }
+    });
+
+    // update speed values even if sensors don't detect anything in case wheels are stopped or take too much time to do a revolution
+    intervalID = setInterval(function() {
+        var vitesseTemp1, vitesseTemp2;
+            if((vitesseTemp1 = compteur1*2*Math.PI*rayon*Math.pow(10, -3)/(frequenceUpdateVitesse/1000)*3.6) <= vitesse1) vitesse1 = vitesseTemp1;
+            Dom.set('vitesse1', Math.round(vitesse1*100)/100 + " km/h");
+            compteur1 = 0;
+
+            if((vitesseTemp2 = compteur2*2*Math.PI*rayon*Math.pow(10, -3)/(frequenceUpdateVitesse/1000)*3.6) <= vitesse2) vitesse2 = vitesseTemp2;
+            Dom.set('vitesse2', Math.round(vitesse2*100)/100 + " km/h");
+            compteur2 = 0;
+    }, frequenceUpdateVitesse);
+
+}
+
+app.resetData = function(){
+    toggleGetInfos = false;
+    Dom.get('optionsMenu').style.display = "inline-block";
+    Dom.get('disconnectButton').style.display = "inline-block";
+    Dom.set('chrono1', "&nbsp;");
+    Dom.set('chrono2', "&nbsp;");
+    Dom.set('getInfos', "Demarrer");
+    Dom.get('getInfos').className = "green wide";
+    Dom.set('vitesse1', "-");
+    Dom.set('distance1', "-");
+    Dom.set('vmax1', "-");
+    Dom.set('vitesse2', "-");
+    Dom.set('distance2', "-");
+    Dom.set('vmax2', "-");
+    distanceParcourue1 = 0;
+    distanceParcourue2 = 0;
+    progression1 = 0;
+    progression2 = 0;
+    vitesse1 = 0;
+    vitesse2 = 0;
+    vitesseMax1 = 0;
+    vitesseMax2 = 0;
+    Dom.get('grad1pic').style.top = 200 + "px";
+    Dom.get('grad2pic').style.top = 200 + "px";
+    Dom.get('grad1').getElementsByClassName("bar")[0].style.height = progression1 + "%";
+    Dom.get('grad1').getElementsByClassName("status")[0].textContent = Math.floor(progression1) + "%";
+    Dom.get('grad2').getElementsByClassName("bar")[0].style.height = progression2 + "%";
+    Dom.get('grad2').getElementsByClassName("status")[0].textContent = Math.floor(progression2) + "%";
+    toggleGetChrono1 = true;
+    toggleGetChrono2 = true;
+    
+    // reset of some of the game variables/displays needed here
+    Player1.hasFinished = false;
+    Player2.hasFinished = false;
+    Player1.position = 0;
+    Player2.position = 0;
+    Player1.topspeed = 0;
+    Player2.topspeed = 0;
+    Dom.set('displayW1', "");
+    Dom.set('displayW2', "");
+    Dom.set('distancePlayer1', Player1.position);
+    Dom.set('distancePlayer2', Player2.position);
+    Dom.set('topspeedPlayer1', Player1.topspeed);
+    Dom.set('topspeedPlayer2', Player2.topspeed);
+
+    window.clearInterval(intervalID);
+}
+
+app.countDown = function(timer, persistence){
+    
+    var countDownDate = new Date(Date.parse(new Date()) + timer * 1000).getTime();          // sets timer time
+
+    intervalID = setInterval(function() {
+
+        var deltaTime = countDownDate - new Date().getTime();                               // time left on clock
+        var countDownTime = Math.ceil(deltaTime/1000);                                      // ceil time left for a better feeling
+
+        if(deltaTime > 0){
+            Dom.set('chronotime', countDownTime);                            // displays time left for everyone
+            Dom.set('displayW1', countDownTime);
+            Dom.set('displayW2', countDownTime);
+        }          
+        else{
+            Dom.set('displayW1', "C'EST PARTI !");                                          // LET'S GO prompt for game
+            Dom.set('displayW2', "C'EST PARTI !");
+            var timeOutCountDown = setTimeout(function(){                                   // clear the LET'S GO prompt after some time
+                Dom.set('displayW1', "");
+                Dom.set('displayW2', "");
+                window.clearTimeout(timeOutCountDown);
+            }, persistence*1000);
+        }
+    });
+}
+
+app.pretpartez = function(timer, persistence){
+    var countDownDate = new Date(Date.parse(new Date()) + timer * 1000).getTime();          // sets timer time
+
+    intervalID = setInterval(function() {
+
+        var deltaTime = countDownDate - new Date().getTime();                               // time left on clock
+
+        if(deltaTime > (timer*1000)/2){
+            Dom.set('chronotime', "À vos marques..");
+            Dom.set('displayW1', "À vos marques..");
+            Dom.set('displayW2', "À vos marques..");
+        }
+        else if(deltaTime > 0){
+            Dom.set('chronotime', "Prêts ?");
+            Dom.set('displayW1', "Prêts ?");
+            Dom.set('displayW2', "Prêts ?");
+        }       
+        else{
+            Dom.set('chronotime', "PARTEZ !");
+            Dom.set('displayW1', "PARTEZ !");
+            Dom.set('displayW2', "PARTEZ !");
+            var timeOutCountDown = setTimeout(function(){                                   // clear the LET'S GO prompt after some time
+                Dom.set('displayW1', "");
+                Dom.set('displayW2', "");
+                window.clearTimeout(timeOutCountDown);
+            }, persistence*1000);
+        }
+    });
+}</code>
+		<header>index.js</header>
+		<code class="fichier">'use strict';
+
+var app = {
+    initialize: function() {
+        this.bind();
+    },
+    bind: function() {
+        document.addEventListener('deviceready', this.deviceready, false);
+        // hide all unwanted screens
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    deviceready: function() {
+
+        // wire buttons to functions
+        deviceList.ontouchstart = app.connect;
+        refreshButton.ontouchstart = app.list;
+        
+        // add event listeners on options inputs that need to be updated 
+        // rayon
+        document.getElementById('rayonOptionRange').addEventListener("input", function() {
+            document.getElementById('rayonOption').value = document.getElementById('rayonOptionRange').value;
+        });
+        document.getElementById('rayonOption').addEventListener("input", function() {
+            document.getElementById('rayonOptionRange').value = document.getElementById('rayonOption').value;
+        });
+        // distance
+        document.getElementById('distanceOptionRange').addEventListener("input", function() {
+            document.getElementById('distanceOption').value = document.getElementById('distanceOptionRange').value;
+            document.getElementById('coefDif2Label').innerHTML = "x"+document.getElementById('coefDif2').value+" ("+document.getElementById('distanceOption').value*document.getElementById('coefDif2').value+"m)";
+        });
+        document.getElementById('distanceOption').addEventListener("input", function() {
+            document.getElementById('distanceOptionRange').value = document.getElementById('distanceOption').value;
+        });
+        // difficulte
+        document.getElementById('coefDif1').addEventListener("input", function() {
+            document.getElementById('coefDif1Label').innerHTML = "x"+document.getElementById('coefDif1').value;
+            document.getElementById('coefDif2').value = 1;
+            document.getElementById('coefDif2Label').innerHTML = "x"+document.getElementById('coefDif2').value;
+        });
+        document.getElementById('coefDif2').addEventListener("input", function() {
+            document.getElementById('coefDif2Label').innerHTML = "x"+document.getElementById('coefDif2').value+" ("+document.getElementById('distanceOption').value*document.getElementById('coefDif2').value+"m)";
+            document.getElementById('coefDif1').value = 1;
+            document.getElementById('coefDif1Label').innerHTML = "x"+document.getElementById('coefDif1').value;
+        });
+
+        app.list();
+    },
+    list: function(event) {
+        deviceList.firstChild.innerHTML = "Recherche en cours...";
+        app.setStatus("Recherche de périphériques Bluetooth...");
+        
+        bluetoothSerial.list(app.ondevicelist, app.generateFailureFunction("Erreur de chargement de la liste."));
+    },
+    connect: function (e) {
+        app.setStatus("Connexion en cours...");
+        var device = e.target.getAttribute('deviceId');
+        console.log("Connexion vers " + device);
+        bluetoothSerial.connect(device, app.onconnect, app.ondisconnect);        
+    },
+    disconnect: function(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        app.setStatus("Déconnexion...");
+        bluetoothSerial.disconnect(app.ondisconnect);
+    },
+    onconnect: function() {
+        connectionScreen.hidden = true;
+        if(app.currentScreen == "game")
+            app.gameScreen();
+        else
+            app.dataScreen();
+        app.setStatus("Connecté");
+    },
+    ondisconnect: function() {
+        app.connectionScreen();
+        app.setStatus("Déconnecté");
+    },
+    currentScreen: "data",  // start as dataScreen
+    swapScreens: function(button) {
+        if(button.id == 'toGame'){
+            app.gameScreen();
+            button.id = 'toData';
+            button.innerHTML = 'Swap to data';
+            app.setStatus("Mode jeu");
+        }
+        else if(button.id == 'toData'){
+            app.dataScreen();
+            button.id = 'toGame';
+            button.innerHTML = 'Swap to game';
+            app.setStatus("Mode données");
+        }
+    },
+    connectionScreen: function(){
+        connectionScreen.hidden = false;
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+        graphScreen.hidden = true;
+    },
+    gameScreen: function(){
+        gameScreen.hidden = false;
+        buttons.hidden = false;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+        app.currentScreen = "game";
+    },
+    dataScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = false;
+        dataScreen.hidden = false;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+        app.currentScreen = "data";
+    },
+    //================================================================
+    graphScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = false;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    graphDirectDataScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = false;
+        graphComparaisonScreen.hidden = true;
+    },
+    graphComparaisonScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = false;
+    },
+    quit: function(){
+        gameScreen.hidden = false;
+        buttons.hidden = false;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    goBack: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = true;
+        graphScreen.hidden = false;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+    //=================================================================
+    options: {  // all variables used in both data and game and set by the user in optionsScreen
+        rayon: document.getElementById('rayonOption').value,
+        distance: document.getElementById('distanceOption').value,
+        styleTerrain: document.getElementById('styleTerrain').value,
+        joueur1nom: document.getElementById('player1Name').value,
+        joueur2nom: document.getElementById('player2Name').value,
+        joueur1couleur: document.getElementById('couleurJoueur1').value,
+        joueur2couleur: document.getElementById('couleurJoueur2').value,
+        joueur1difficulte: document.getElementById('coefDif1').value,
+        joueur2difficulte: document.getElementById('coefDif2').value
+    },
+    optionsScreen: function(){
+        gameScreen.hidden = true;
+        buttons.hidden = true;
+        dataScreen.hidden = true;
+        optionsScreen.hidden = false;
+        graphScreen.hidden = true;
+        graphDirectDataScreen.hidden = true;
+        graphComparaisonScreen.hidden = true;
+    },
+
+    quitOptions: function(){
+        optionsScreen.hidden = true;
+        if(app.currentScreen == "game"){
+            gameScreen.hidden = false;
+            buttons.hidden = false;
+        }
+        else if(app.currentScreen == "data"){
+            buttons.hidden = false;
+            dataScreen.hidden = false;
+        }
+        else app.setStatus("erreur: currentScreen définie à "+app.currentScreen);
+    },
+    saveOptions: function(){
+        if( parseInt(app.options.rayon = document.getElementById('rayonOption').value) < 0) app.options.rayon = 0.0;
+        if( parseInt(app.options.distance = document.getElementById('distanceOption').value) < 0 ) app.options.distance = 0;
+        app.options.styleTerrain = document.getElementById('styleTerrain').value;
+        app.options.joueur1nom = document.getElementById('player1Name').value;
+        app.options.joueur2nom = document.getElementById('player2Name').value;
+        app.options.joueur1couleur = document.getElementById('couleurJoueur1').value;
+        app.options.joueur2couleur = document.getElementById('couleurJoueur2').value;
+        if( parseInt(app.options.joueur1difficulte = document.getElementById('coefDif1').value) < 1) app.options.joueur1difficulte = 1;
+        if( parseInt(app.options.joueur2difficulte = document.getElementById('coefDif2').value) < 1) app.options.joueur2difficulte = 1;
+        app.cancelOptions();    // update values in case they do not fit the requirements (min/max)
+        app.reloadJSfile('js/game.js');
+        app.reloadJSfile('js/app.js');
+    },
+    cancelOptions: function(){
+        document.getElementById('rayonOption').value = app.options.rayon;
+        document.getElementById('rayonOptionRange').value = app.options.rayon;
+        document.getElementById('distanceOption').value = app.options.distance;
+        document.getElementById('distanceOptionRange').value = app.options.distance;
+        document.getElementById('styleTerrain').value = app.options.styleTerrain;
+        document.getElementById('player1Name').value = app.options.joueur1nom;
+        if( (document.getElementById('racer1Name').innerHTML = app.options.joueur1nom) == "" ) document.getElementById('racer1Name').innerHTML = "Joueur 1";
+        document.getElementById('player2Name').value = app.options.joueur2nom;
+        if( (document.getElementById('racer2Name').innerHTML = app.options.joueur2nom) == "" ) document.getElementById('racer2Name').innerHTML = "Joueur 2";
+        document.getElementById('couleurJoueur1').value = app.options.joueur1couleur;
+        document.getElementById('couleurJoueur2').value = app.options.joueur2couleur;
+        document.getElementById('coefDif1').value = app.options.joueur1difficulte;
+        document.getElementById('coefDif2').value = app.options.joueur2difficulte;
+        document.getElementById('coefDif1Label').innerHTML = "x"+app.options.joueur1difficulte;
+        document.getElementById('coefDif2Label').innerHTML = "x"+app.options.joueur2difficulte;
+        app.quitOptions();
+    },
+    reloadJSfile: function(fileName){   // used to reload app.js and game.js to stop their current process and safely update variables
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = fileName;
+        head.appendChild(script);
+    },
+    sendToArduino: function(c) {
+        bluetoothSerial.write("c" + c + "\n");
+    },
+    timeoutId: 0,
+    setStatus: function(status) {
+        if (app.timeoutId) {
+            clearTimeout(app.timeoutId);
+        }
+        messageDiv.innerText = status;
+        app.timeoutId = setTimeout(function() { messageDiv.innerText = ""; }, 4000);
+    },
+    ondevicelist: function(devices) {
+        var listItem, deviceId;
+
+        // remove existing devices
+        deviceList.innerHTML = "";
+        app.setStatus("");
+        
+        devices.forEach(function(device) {
+            listItem = document.createElement('li');
+            listItem.className = "topcoat-list__item";
+            if (device.hasOwnProperty("uuid")) {
+                deviceId = device.uuid;
+            } else if (device.hasOwnProperty("address")) {
+                deviceId = device.address;
+            } else {
+                deviceId = "ERROR " + JSON.stringify(device);
+            }
+            listItem.setAttribute('deviceId', device.address);            
+            listItem.innerHTML = device.name + "<\br/><\i>" + deviceId + "</\i>";
+            deviceList.appendChild(listItem);
+        });
+
+        if (devices.length === 0) {
+            
+            if (cordova.platformId === "ios") { // BLE
+                app.setStatus("Aucun périphérique Bluetooth détecté");
+            } else { // Android
+                app.setStatus("Veuillez connecter un appareil");
+            }
+
+        } else {
+            app.setStatus(devices.length + " appareil" + (devices.length === 1 ? "" : "s") + " trouvé" + (devices.length === 1 ? "" : "s"));
+        }
+    },
+    generateFailureFunction: function(message) {
+        var func = function(reason) {
+            var details = "";
+            if (reason) {
+                details += ": " + JSON.stringify(reason);
+            }
+            app.setStatus(message + details);
+        };
+        return func;
+    }
+};</code>
+		<header>graph.js</header>
+		<code class="fichier">//===============================================
+// author : Cedric Caruzzo
+// Github : https://github.com/CaruzzoC
+// annee : 2020
+//===============================================
+//===================================================LINE CHART===========================================
+new Chart(document.getElementById("line-chart-Direct"), {
+  type: 'line',
+  data: {
+    labels: ["00:05","00:10","00:15","00:20","00:25","00:30"],
+    datasets: [{ 
+        data: [10,8,5,9,13,12],
+        label: "Performance 1",
+        borderColor: "#3e95cd",
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Direct Data'
+    }
+  }
+});
+
+new Chart(document.getElementById("line-chart-Comparaison"), {
+  type: 'line',
+  data: {
+    labels: ["00:05","00:10","00:15","00:20","00:25","00:30"],
+    datasets: [{ 
+        data: [10,8,5,9,13,12],
+        label: "Performance 1",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [15,12,13,14,7,10],
+        label: "Performance 2",
+        borderColor: "#8e5ea2",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Comparaison de Performances'
+    }
+  }
+});
+
+//===========================================DOUGHNUT CHART==============================================
+
+new Chart(document.getElementById("doughnut-chart1"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Performance 1","Performance 2"],
+      datasets: [
+        {
+          label: "Distance Maximum",
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [13,15]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Distance Maximum'
+      }
+    }
+});
+
+new Chart(document.getElementById("doughnut-chart2"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Performance 1","Performance 2"],
+      datasets: [
+        {
+          label: "Distance Minimum",
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [5,7]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Distance Minimum'
+      }
+    }
+});
+
+new Chart(document.getElementById("doughnut-chart3"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Performance 1","Performance 2"],
+      datasets: [
+        {
+          label: "Vitesse Maximum",
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [9.36,10.8]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Vitesse Maximum'
+      }
+    }
+});
+
+new Chart(document.getElementById("doughnut-chart4"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Performance 1","Performance 2"],
+      datasets: [
+        {
+          label: "Vitesse Moyenne",
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [6.84,8.52]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Vitesse Moyenne'
+      }
+    }
+});
+
+
+
+//===========================================DROPDOWN======================================================
+var x = "Performance 1, Performance 2";
+
+var options = x.split(",");
+
+var select = document.getElementById('performanceChoice1');
+for(var i=0; i<\options.length; i++)
+  select.options[i+1] = new Option(options[i], i);
+
+var select = document.getElementById('performanceChoice2');
+for(var i=0; i<\options.length; i++)
+  select.options[i+1] = new Option(options[i], i);
+
+//==========================================GRAPH UPDATE==================================================
+
+function updateConfigByMutating(chart) {
+    chart.options.animation.duration = 0;
+    chart.update();
+}
+
+function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    updateConfigByMutating(chart);
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    updateConfigByMutating(chart);
+}</code>
+      <p>Download all the scripts for use here: </p>
+        <button class="btn"><i class="fa fa-download"></i><a class="downloadbtn" href="download/js.zip" download="script_package">Download</a></button>
+      </article>
+    </section>
+    <section class="main-section" id="Graphical_part">
+      <header><h2>Graphical part</h2></header>
+      <article>
+        <header>index.html</header>
+        <code class="fichier">
+&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+   &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, user-scalable=no
+   initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" /&gt;
+
+   &lt;title&gt;HandiRace&lt;/title&gt;
+   &lt;link rel="stylesheet" href="ui/css/evothings-app.css"&gt;
+   &lt;style&gt;
+   @import 'ui/css/evothings-app.css';
+   &lt;/style&gt;
+   &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+   &lt;meta name = "format-detection" content = "telephone=no"/&gt;
+   &lt;meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" /&gt;
+   
+   &lt;script type="text/javascript" src="js/chrono.js"&gt;&lt;/script&gt;
+
+   &lt;/head&gt;
+
+   &lt;body&gt; 
+
+   &lt;div data-role="main" class="ui-content"&gt;
+  &lt;!---------------------------------------------------------------------------------------------------------------------------------------------------------- HEADER -----------------&gt;
+   &lt;div id="header"&gt;
+   &lt;img class="logotype" src="ui/images/logoHandiRace.png" alt="Handirace logo" /&gt;
+   &lt;h1&gt;HandiRace&lt;/h1&gt;
+   &lt;img class="logotype" src="ui/images/gip.png" alt="GIP Handicap logo" /&gt;
+   &lt;img class="logotype" src="ui/images/unc.svg" alt="UNC logo" /&gt;
+   &lt;/div&gt;
+
+  &lt;!----------------------------------------------------------------------------------------------------------------------------------------------------- CONNECTION SCREEN ------------&gt;
+   &lt;div id="connectionScreen"&gt;
+   &lt;ul id="deviceList" class="topcoat-list"&gt; 
+   &lt;/ul&gt;
+   &lt;div style="margin: 10px"&gt; 
+   &lt;button class="topcoat-button" id="refreshButton"&gt;Chercher des appareils&lt;/button&gt;
+   &lt;/div&gt; 
+   &lt;/div&gt;
+
+  &lt;!--------------------------------------------------------------------------------------------------------------------------------------------------------- GAME SCREEN ---------------&gt;
+   &lt;div id="gameScreen"&gt;
+
+   &lt;div class="row"&gt;
+
+   &lt;div class="column"&gt;
+   &lt;div id="racer1"&gt;
+   
+   &lt;div class="hud" id="hud1"&gt;
+   &lt;div class="hudcentered hudelement" id="racer1Name"&gt;
+   Joueur 1
+   &lt;/div&gt;
+
+   &lt;span class="hudleft hudelement"&gt;
+   &lt;div class="chrono"&gt;Chrono: &lt;span id="chronoPlayer1" class="value"&gt;00:00:000&lt;/span&gt;&lt;/div&gt;
+   &lt;div class="distance"&gt;Distance: &lt;span id="distancePlayer1" class="value"&gt;0&lt;/span&gt; m&lt;/div&gt;
+   &lt;/span&gt;
+   
+   &lt;span class="hudright hudelement"&gt;
+   &lt;div class="speed"&gt;Vitesse: &lt;span id="speedPlayer1" class="value"&gt;0&lt;/span&gt; km/h&lt;/div&gt;
+   &lt;div class="topspeed"&gt;Vitesse max: &lt;span id="topspeedPlayer1" class="value"&gt;0&lt;/span&gt; km/h&lt;/div&gt;
+   &lt;/span&gt;
+
+   &lt;div class="displayWinner" id="displayW1"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div class="speedbubble"&gt;
+   &lt;div class="speedbubbleamount" id="speedbubblePlayer1"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div class="distancebubble"&gt;
+   &lt;div class="distancebubbleamount" id="distancebubblePlayer1"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+   
+   &lt;canvas id="canvas1"&gt;&lt;/canvas&gt;
+   
+   &lt;/div&gt;
+   
+   &lt;/div&gt;
+   
+   &lt;div class="column"&gt;
+   &lt;div id="racer2"&gt;
+   
+   &lt;div class="hud" id="hud2"&gt; 
+   &lt;div class="hudcentered hudelement" id="racer2Name"&gt;
+   Joueur 2
+   &lt;/div&gt;
+
+   &lt;span class="hudleft hudelement"&gt;
+   &lt;div class="chrono"&gt;Chrono: &lt;span id="chronoPlayer2" class="value"&gt;00:00:000&lt;/span&gt;&lt;/div&gt;
+   &lt;div class="distance"&gt;Distance: &lt;span id="distancePlayer2" class="value"&gt;0&lt;/span&gt; m&lt;/div&gt;
+   &lt;/span&gt;
+   
+   &lt;span class="hudright hudelement"&gt;
+   &lt;div class="speed"&gt;Vitesse: &lt;span id="speedPlayer2" class="value"&gt;0&lt;/span&gt; km/h&lt;/div&gt;
+   &lt;div class="topspeed"&gt;Vitesse max: &lt;span id="topspeedPlayer2" class="value"&gt;0&lt;/span&gt; km/h&lt;/div&gt;
+   &lt;/span&gt;
+
+   &lt;div class="displayWinner" id="displayW2"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div class="speedbubble"&gt;
+   &lt;div class="speedbubbleamount" id="speedbubblePlayer2"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div class="distancebubble"&gt;
+   &lt;div class="distancebubbleamount" id="distancebubblePlayer2"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+   
+   &lt;canvas id="canvas2"&gt;&lt;/canvas&gt;
+   
+   &lt;/div&gt;
+   &lt;/div&gt;
+   
+   &lt;/div&gt;
+
+   &lt;/div&gt;
+
+  &lt;!----------------------------------------------------------------------------------------------------------------------------------------------------------- BUTTONS -----------------&gt;
+
+   &lt;div id="buttons"&gt;
+
+   &lt;button id="getInfos" class="green wide" onclick="app.canGetInfos()"&gt;Demarrer&lt;/button&gt; 
+   
+   &lt;button id="toGame" class="aluminium wide" onclick="app.swapScreens(this)"&gt;Swap to game&lt;/button&gt; 
+
+   &lt;button id="optionsMenu" class="aluminium wide" onclick="app.optionsScreen()"&gt;Options&lt;/button&gt;
+
+   &lt;button id="toGraph" class="aluminium wide" onclick="app.graphScreen()"&gt;Graph interface&lt;/button&gt;
+
+   &lt;button id="disconnectButton" class="yellow wide" onclick="app.disconnect()"&gt;Deconnecter&lt;/button&gt;
+
+   &lt;/div&gt;
+
+  &lt;!--------------------------------------------------------------------------------------------------------------------------------------------------------- DATA SCREEN ---------------&gt;
+   &lt;div id="dataScreen"&gt;
+   
+   &lt;div id="chronotime"&gt;00:00:000&lt;/div&gt;
+
+   &lt;div class="row"&gt;
+   &lt;div class="column"&gt;
+
+   &lt;div class="playerTime"&gt;
+   &lt;div&gt;Temps joueur 1:&lt;/div&gt;
+   &lt;div id="chrono1"&gt;&amp;nbsp;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div id="grad1pic"&gt;&lt;/div&gt;
+
+   &lt;div id="grad1"&gt;
+   &lt;div class="bar"&gt;&lt;div class ="status"&gt;&lt;/div&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Vitesse: &lt;/div&gt;&lt;div id="vitesse1"&gt;-&lt;/div&gt;&lt;/button&gt;
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Distance: &lt;/div&gt;&lt;div id="distance1"&gt;-&lt;/div&gt;&lt;/button&gt;
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Vitesse MAX: &lt;/div&gt;&lt;div id="vmax1"&gt;-&lt;/div&gt;&lt;/button&gt;
+
+   &lt;/div&gt;
+
+   &lt;div id="circuitContainer"&gt;&lt;div id="circuit"&gt;&lt;/div&gt;&lt;/div&gt;
+   
+   &lt;div class="column"&gt;
+
+   &lt;div class="playerTime"&gt;
+   &lt;div&gt;Temps joueur 2:&lt;/div&gt;
+   &lt;div id="chrono2"&gt;&amp;nbsp;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div id="grad2pic"&gt;&lt;/div&gt;
+
+   &lt;div id="grad2"&gt;
+   &lt;div class="bar"&gt;&lt;div class ="status"&gt;&lt;/div&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Vitesse: &lt;/div&gt;&lt;div id="vitesse2"&gt;-&lt;/div&gt;&lt;/button&gt;
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Distance: &lt;/div&gt;&lt;div id="distance2"&gt;-&lt;/div&gt;&lt;/button&gt;
+   &lt;button class="blue wide mediumText"&gt;&lt;div&gt;Vitesse MAX: &lt;/div&gt;&lt;div id="vmax2"&gt;-&lt;/div&gt;&lt;/button&gt;
+   
+   &lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;/div&gt;
+  &lt;!------------------------------------------------------------------------------------------------------------------------------------------------------- OPTIONS SCREEN --------------&gt;
+   &lt;div id="optionsScreen"&gt;
+   
+   &lt;div id="optionsContainer"&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Rayon de la roue (en mm)&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;input type="range" id="rayonOptionRange" name="rayonRoueRange" value="68.75" min="0" max="1000" step="10"&gt;
+   &lt;input type="number" id="rayonOption" name="rayonRoue" value="68.75" min="0" placeholder="Valeur en mm"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Distance de course (en m)&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;input type="range" id="distanceOptionRange" name="longueurPisteRange" value="100" min="30" max="400" step="10"&gt;
+   &lt;input type="number" id="distanceOption" name="longueurPiste" value="100" min="0" step="10" placeholder="Valeur en m"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Style de terrain&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;select id="styleTerrain" name="styleTerrain"&gt;
+   &lt;option value="road"&gt;Route (d&eacute;faut)&lt;/option&gt;
+   &lt;option value="track"&gt;Piste de 400m&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Nom du joueur 1:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;input type="text" id="player1Name" name="nomJoueur1" placeholder="Entrer le nom du joueur 1"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Couleur du joueur 1:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;select id="couleurJoueur1" name="couleurJoueur1"&gt;
+   &lt;option value="RED"&gt;Rouge (d&eacute;faut)&lt;/option&gt;
+   &lt;option value="BLUE"&gt;Bleu&lt;/option&gt;
+   &lt;option value="GREEN"&gt;Vert&lt;/option&gt;
+   &lt;option value="YELLOW"&gt;Jaune&lt;/option&gt;
+   &lt;option value="PINK"&gt;Rose&lt;/option&gt;
+   &lt;option value="CYAN"&gt;Cyan&lt;/option&gt;
+   &lt;option value="ORANGE"&gt;Orange&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Coefficient de distance &agrave; parcourir:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;label id="coefDif1Label"&gt;x1&lt;/label&gt;
+   &lt;input type="range" id="coefDif1" name="coefficientDifficulteJoueur1" value="1" min="1" max="3" step="0.5"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Nom du joueur 2:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;input type="text" id="player2Name" name="nomJoueur2" placeholder="Entrer le nom du joueur 2"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Couleur du joueur 2:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;select id="couleurJoueur2" name="couleurJoueur2"&gt;
+   &lt;option value="RED"&gt;Rouge (d&eacute;faut)&lt;/option&gt;
+   &lt;option value="BLUE"&gt;Bleu&lt;/option&gt;
+   &lt;option value="GREEN"&gt;Vert&lt;/option&gt;
+   &lt;option value="YELLOW"&gt;Jaune&lt;/option&gt;
+   &lt;option value="PINK"&gt;Rose&lt;/option&gt;
+   &lt;option value="CYAN"&gt;Cyan&lt;/option&gt;
+   &lt;option value="ORANGE"&gt;Orange&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="row"&gt;
+   &lt;div class="col-25"&gt;
+   &lt;label&gt;Coefficient de distance &agrave; parcourir:&lt;/label&gt;
+   &lt;/div&gt;
+   &lt;div class="col-75"&gt;
+   &lt;label id="coefDif2Label"&gt;x1&lt;/label&gt;
+   &lt;input type="range" id="coefDif2" name="coefficientDifficulteJoueur2" value="1" min="1" max="3" step="0.5"&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;/div&gt; 
+   
+   &lt;button class="green wide" onclick="app.saveOptions()"&gt; Sauvegarder et quitter &lt;/button&gt;
+   
+   &lt;button class="red wide" onclick="app.cancelOptions()"&gt; Annuler &lt;/button&gt;
+   
+   &lt;/div&gt;
+
+  &lt;!------------------------------------------------------------------------------------------------------------------------------------------------------- GRAPH SCREEN --------------&gt;
+
+   &lt;div id="graphScreen" class="graphFonction"&gt;
+   &lt;div id="graphMenuScreen"&gt;
+   &lt;div id="MenuHeader"&gt;
+   &lt;img class="logoHR" src="ui/images/logoHR.png" alt="Handirace logo" /&gt;
+   &lt;p&gt;Menu de visualisation de Data&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;button id="getInfos" class="mediumButton" onclick="app.graphDirectDataScreen()"&gt;Direct Data&lt;/button&gt;
+   &lt;button id="toGame" class="mediumButton" onclick="app.graphComparaisonScreen()"&gt;Comparaison&lt;/button&gt; 
+   &lt;button id="optionsMenu" class="mediumButton" onclick="app.quit()"&gt;Quitter&lt;/button&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;div id="graphDirectDataScreen" class="graphFonction"&gt;
+   &lt;canvas id="line-chart-Direct" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;div class="chrono"&gt;Chrono: &lt;span id="chronoDataLive" class="value"&gt;00:00:000&lt;/span&gt;&lt;/div&gt;
+   &lt;button id="getInfos" class="green wide" onclick="chronoStart(chronoDataLive)"&gt;Demarrer&lt;/button&gt;
+   &lt;button id="getInfos" class="red wide" onclick="chronoReset(chronoDataLive)"&gt;Reset&lt;/button&gt;
+   &lt;button id="graphQuit" onclick="app.goBack()"&gt; Return &lt;/button&gt;
+   &lt;/div&gt;
+
+   &lt;div id="graphComparaisonScreen" class="graphFonction"&gt;
+   &lt;div class="col-container"&gt;
+   &lt;div class="col"&gt;
+   &lt;p&gt;Choisissez une performance :&lt;/p&gt;
+   &lt;select id="performanceChoice1" class="custom-select"&gt;
+   &lt;option selected disabled&gt;choix ...&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;p&gt;Choisissez une performance :&lt;/p&gt;
+   &lt;select id="performanceChoice2" class="custom-select"&gt;
+   &lt;option selected disabled&gt;choix ...&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;button id="CompareButton" class="mediumButton marg" onclick="app.compare()"&gt;Comparer&lt;/button&gt;
+   &lt;/div&gt;
+   &lt;div class="col"&gt;
+   &lt;canvas id="line-chart-Comparaison" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="col-container"&gt;
+   &lt;div class="col"&gt;
+   &lt;canvas id="doughnut-chart1" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;canvas id="doughnut-chart2" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;/div&gt;
+   &lt;div class="col"&gt;
+   &lt;canvas id="doughnut-chart3" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;canvas id="doughnut-chart4" width="800" height="450"&gt;&lt;/canvas&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;button id="graphQuit" onclick="app.goBack()"&gt; Return &lt;/button&gt;
+   &lt;/div&gt;
+   
+  &lt;!-------------------------------------------------------------------------------------------------------------------------------------------------------- MESSAGE DIV --------------&gt;
+   &lt;div id="messageDiv" style="font-size:75%"&gt;&lt;/div&gt; 
+
+   
+   &lt;/div&gt;
+
+  &lt;!--
+   *************************************************************************************
+   * SCRIPTS PART DOWN THERE *
+   *************************************************************************************
+  --&gt;
+
+   &lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="js/underscore-min.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
+   &lt;!-- &lt;script type="text/javascript"&gt;
+   app.initialize();
+   &lt;/script&gt; --&gt;
+   &lt;script type="text/javascript" src="js/gamehelpersandconstants.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="js/app.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="js/game.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="chartjs/node_modules/chart.js/dist/Chart.js"&gt;&lt;/script&gt;
+   &lt;script type="text/javascript" src="js/graph.js"&gt;&lt;/script&gt;
+
+   &lt;/body&gt;
+  &lt;/html&gt;
+        </code>
+        <header>evothings-app.css</header>
+        <code class="fichier">
+@import '../fonts/ProximaNova.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Proxima Nova Regular', sans-serif;
+  font-weight: normal;
+
+  background: #152B39;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {
+  box-sizing: border-box; 
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0 0.9em 0 0.9em;
+  font-size: 150%;
+  font-size: 7.5vw;
+}
+
+/* Add a bottom margin. */
+body::after {
+  display:block;
+  content: '';
+  height: 1em;
+}
+
+/*  ----------------------------------------------------------
+              MAIN CONTENT
+  ---------------------------------------------------------- */
+
+.ui-content {
+  margin-top: 0;
+}
+
+#header {
+  padding-top: 1%;
+  display: inline-block;
+  text-align: center;
+}
+
+#header img.logotype {
+  width: 10%;
+  padding: 0 2.5%;
+}
+
+main {
+  z-index: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  font-family: inherit;
+  font-size: 63%;
+}
+
+input[type="text"],input[type="url"] {
+  width: 50%;
+
+  padding: 7px 14px 7px 14px;
+
+  font-family: inherit;
+  font-size: 63%;
+  color: #000;
+
+  border-radius: 4px;
+  border: none;
+
+  background-color: #f3f3f3; /* Default color: "Arctic". */
+}
+
+textarea {
+  box-sizing: border-box; /* Width & height includes padding & border. */
+  width: 100%;
+
+  padding: 7px 14px 7px 14px;
+
+  border-radius: 4px;
+  border: none;
+
+  font-family: inherit;
+  font-size: 63%;
+  line-height: 1.5;
+
+  background-color: #f3f3f3; /* Default color: "Arctic". */
+}
+
+button.clear {
+  margin-left: 1%;
+  background-color: #e15a64; /* Default color: "Soft Red". */
+}
+
+
+button,
+input.btn-group + label,
+.button {
+  display: inline-block;
+  box-sizing: border-box; /* Width & height includes padding & border. */
+
+  font-family: 'Proxima Nova Black';
+  font-size: inherit;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #fff;
+
+  margin: 0.15em 0 0.15em 0;
+  padding: 9px 13px 8px 13px;
+
+  border-radius: 4px;
+  border: none;
+
+  box-shadow: none;
+
+  background-color: #b9b9b9; /* Default color: "Charcoal" */
+}
+body > button,
+body > input.btn-group + label,
+main > button,
+main > input.btn-group + label {
+  font-size: 63% !important;
+}
+button:active, button.pressed,
+input.btn-group:active + label, input.btn-group + label:active,
+input.btn-group:checked + label {
+  box-shadow: inset 0 8px 9px -9px #000;
+  background-color: #9d9d9d; /* Default color: "Charcoal" */
+}
+button:focus,
+input.btn-group:focus {
+  outline: none;
+}
+
+button.wide,
+input.btn-group.wide + label,
+input.btn-group + label.wide {
+  width: 100%;
+}
+
+button.big,
+input.btn-group.big + label,
+input.btn-group + label.big {
+  font-size: 150%;
+  line-height: 3.0;
+}
+
+button.mediumText, 
+input.btn-group.mediumText + label,
+input.btn-group + label.mediumText{
+  font-size: 80%;
+}
+
+
+h1 {
+  display: inline;
+  padding: 0;
+  margin: 1em 0 0 0;
+
+  font-family: 'Proxima Nova Black';
+  font-size: 100%;
+  line-height: 1.5; 
+
+  vertical-align: middle;
+}
+
+h2,h3,h4,h5,h6 {
+  margin: 1em 0 0 0;
+  padding: 0;
+
+  font-family: 'Proxima Nova Bold';
+  font-size: 63%;
+
+  line-height: 1.5;
+
+  vertical-align: middle;
+}
+
+a {
+  color: #52afb8; /* Default color: "Blue Hue" (dark variant) */
+}
+
+p {
+  margin: 0.4em 0 0.4em 0;
+  padding: 0;
+
+  font-size: 63%;
+  line-height: 1.5;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 63%;
+  text-align: left;
+}
+thead {
+  font-family: 'Proxima Nova Bold';
+}
+
+strong {
+  font-family: 'Proxima Nova Bold';
+}
+
+code {
+  font-size: inherit;
+}
+
+ol,ul {
+  list-style-type: none;
+  list-style-position: inside;
+  counter-reset: item;
+
+  margin: 0.5em 0 0 0;
+  padding: 0;
+
+  font-size: 63%;
+}
+ol li, ul li {
+  padding: 0.5em 0 0.5em 0;
+
+  font-size: inherit;
+  line-height: 1.5;
+}
+ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  font-family: 'Proxima Nova Bold';
+}
+ul.dynamic {
+  list-style-type: none;
+  padding: 0;
+}
+ul.dynamic li {
+  padding: 4% 15% 4% 4%;
+
+  border-radius: 4px;
+  border: none;
+
+  box-shadow: inset 0 -7px 12px -12px #000;
+
+  background-color: #f3f3f3;
+}
+ul.dynamic li:last-child {
+  box-shadow: none;
+}
+ul.dynamic li a {
+  color: #000;
+}
+ul.dynamic.arrow li,
+ul.dynamic li.arrow {
+  background-image: url('../images/arrow-right.svg');
+  background-position: 94% center; /* CSS 2 fallback */
+  background-position: right 5% center; /* requires CSS 3 */
+  background-size: 1em auto;
+  background-repeat: no-repeat;
+}
+ul.topcoat-list{  
+  border: 2px solid lightgray;
+  border-radius: 4px; 
+  padding: 0 4%;
+}
+
+
+/*  ----------------------------------------------------------
+              DATA SCREEN
+  ---------------------------------------------------------- */
+
+
+.playerTime {
+  padding: 0.5em 0;
+  text-align: center;
+  font-size: 0.5em
+}
+
+.row {
+  display: flex;
+}
+  
+.column {
+  flex: 50%;
+  padding: 1%;
+}
+  
+.bar {
+  width: 50px;
+  height: 0px;
+  background: green;
+}
+
+.status {
+  transform: rotate(180deg);
+  font-size: 0.8em;
+}
+
+#chronotime {
+  border: solid 1px black; 
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0 0.5em 0;
+  margin: 0.15em 0 0 0;
+}
+
+#chrono1, #chrono2 {
+  font-size: 2em;
+}
+
+#grad1pic, #grad2pic {
+  background-image: url("../images/wheelchair.png");
+  background-repeat: no-repeat;
+  height: 2em;
+  width: 2em;
+  position: relative;
+  top: 200px;
+  margin-top: -1.5em;
+  z-index: 2;
+}
+
+#grad1pic{
+  margin-left: auto;
+}
+
+#grad2pic{
+  margin-left: 10%;
+}
+
+#grad1, #grad2 {
+  width: 50px;
+  height: 200px;
+  border: 4px solid black;
+  transform: rotate(180deg);
+}
+
+#grad1{
+  margin-left: 5%;
+}
+
+#grad2{
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+#circuitContainer{
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+#circuit{
+  position: absolute;
+  top: 65px;
+  left: -71px;
+  background-image: url('../images/circuit.png');
+  background-repeat: no-repeat;
+  height: 220px;
+  width: 142px;
+}
+
+/*  ----------------------------------------------------------
+              GRAPH SCREEN
+  ---------------------------------------------------------- */
+
+.graphFonction {
+  margin: 0;
+  overflow: hidden;
+  background: #152B39;
+  font-family: Courier, monospace;
+  font-size: 14px;
+  color:#ccc; 
+}
+
+#graphQuit{
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #1c3b4f;
+  width: 100%;
+}
+
+#MenuHeader{
+  margin-bottom: 2%;
+  margin-top: 2%;
+  text-align: center;
+}
+
+#MenuHeader, p{
+  font-size: 100%;
+}
+
+.mediumButton{
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 35%;
+  margin-bottom: 5%;
+  display: inline;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #1c3b4f;
+  width: 30%;
+}
+
+.logoHR{
+  width: 30%;
+  display: inline;
+}
+
+#compare{
+  width: 100%;
+}
+
+.marg{
+  margin-top: 2%;
+}
+
+/*.col-container {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  
+  padding: 1em;
+}*/
+
+.custom-select{
+  background-color:#1c3b4f;
+  color :#ccc;
+  font-family: 
+}
+
+/*  ----------------------------------------------------------
+              OPTIONS
+  ---------------------------------------------------------- */
+
+input[type=text], input[type=number], select {
+  padding: 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=text], input[type=number] {
+  width: 90%;
+}
+
+input[type=range], select {
+  width: 100%;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+#optionsContainer {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+#optionsContainer > .row {
+  display: block;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+/*  ----------------------------------------------------------
+                FOOTER
+  ---------------------------------------------------------- */
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;  
+  text-align: center;
+  height: 50px;
+  padding: 1rem;
+}
+
+footer img.logotype {
+  width: 30%;
+  margin: 0 5%;
+}
+
+
+/*  ----------------------------------------------------------
+                COLORS
+  ---------------------------------------------------------- */
+
+/*  Color: "Soft Red"
+  Class name: red
+    ---------------- */
+.color_softred { color: #e15a64; }
+.bg_red, input.red, button.red, ul.red li, label.red,
+input.red + label {
+  background-color: #e15a64 !important;
+  color: white !important;
+}
+/* Downpressed button. */
+button.red:active, button.red.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.red,
+input.btn-group.red:active + label,
+input.btn-group:checked + label.red,
+input.btn-group.red:checked + label {
+  background-color: #cb414b;
+}
+
+/*  Color: "Bright Light"
+  Class name: yellow
+    -------------------- */
+.color_brightlight { color: #ecd53b; }
+.bg_yellow, input.yellow, button.yellow, ul.yellow li, label.yellow,
+input.yellow + label {
+  background-color: #ecd53b !important;
+  color: white !important;
+}
+/* Downpressed button. */
+button.yellow:active, button.yellow.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.yellow,
+input.btn-group.yellow:active + label,
+input.btn-group:checked + label.yellow,
+input.btn-group.yellow:checked + label {
+  background-color: #d9c022;
+}
+
+/*  Color: "Wave Green"
+  Class name: green
+    ------------------ */
+.color_wavegreen { color: #54dfb3; }
+.bg_green, input.green, button.green, ul.green li, label.green,
+input.green + label {
+  background-color: #54dfb3 !important;
+  color: white !important;
+}
+/* Downpressed button. */
+button.green:active, button.green.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.green,
+input.btn-group.green:active + label,
+input.btn-group:checked + label.green,
+input.btn-group.green:checked + label {
+  background-color: #3aca9c;
+}
+
+/*  Color: "Blue Hue"
+  Clas name: blue
+    ------------------ */
+.color_bluehue { color: #6bc6ce; }
+.bg_blue, input.blue, button.blue, ul.blue li, label.blue,
+input.blue + label {
+  background-color: #6bc6ce;
+}
+/* Downpressed button. */
+button.blue:active, button.blue.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.blue,
+input.btn-group.blue:active + label,
+input.btn-group:checked + label.blue,
+input.btn-group.blue:checked + label {
+  background-color: #52afb8;
+}
+
+/*  Color: "Indigo"
+  Class name: indigo
+    ------------------ */
+.color_indigo { color: #b48b9b; }
+.bg_indigo, input.indigo, button.indigo, ul.indigo li, label.indigo,
+input.indigo + label {
+  background-color: #b48b9b;
+}
+/* Downpressed button. */
+button.indigo:active, button.indigo.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.indigo,
+input.btn-group.indigo:active + label,
+input.btn-group:checked + label.indigo,
+input.btn-group.indigo:checked + label {
+  background-color: #9c7283;
+}
+
+/*  Color: "Arctic"
+  Class name: arctic
+    ------------------ */
+.color_arctic { color: #f3f3f3; }
+.bg_arctic, input.arctic, button.arctic, ul.arctic li,
+input.arctic + label {
+  background-color: #f3f3f3;
+}
+/* Downpressed button. */
+button.arctic:active, button.arctic.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.arctic,
+input.btn-group.arctic:active + label,
+input.btn-group:checked + label.arctic,
+input.btn-group.arctic:checked + label {
+  background-color: #656565;
+}
+
+/*  Color: "Aluminium"
+  Class name: aluminium
+    ------------------ */
+.color_aluminium { color: #e2e2e2 }
+.bg_aluminium, input.aluminium, button.aluminium, ul.aluminium li,
+input.aluminium + label {
+  background-color: #e2e2e2;
+}
+/* Downpressed button. */
+button.aluminium:active, button.aluminium.pressed,
+ /* Input element with adjacent label. */
+input.btn-group:active + label.aluminium,
+input.btn-group.aluminium:active + label,
+input.btn-group:checked + label.aluminium,
+input.btn-group.aluminium:checked + label {
+  background-color: #c0c0c0;
+}
+
+/*  Color: "Charcoal"
+  Class name: charcoal
+    ------------------ */
+.color_charcoal { color: #b9b9b9; }
+.bg_charcoal, input.charcoal, button.charcoal, ul.charcoal li,
+input.charcoal + label {
+  background-color: #b9b9b9;
+}
+/* Downpressed button. */
+button.charcoal:active, button.charcoal.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.charcoal,
+input.btn-group.charcoal:active + label,
+input.btn-group:checked + label.charcoal,
+input.btn-group.charcoal:checked + label {
+  background-color: #9d9d9d;
+}
+
+/*  Color: "Stone"
+  Class name: stone
+    ------------------ */
+.color_stone { color: #777777 }
+.bg_stone, input.stone, button.stone, ul.stone li,
+input.stone + label {
+  background-color: #777777;
+}
+/* Downpressed button. */
+button.stone:active, button.stone.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.stone,
+input.btn-group.stone:active + label,
+input.btn-group:checked + label.stone,
+input.btn-group.stone:checked + label {
+  background-color: #656565;
+}
+
+/*  Color: "Jet Black"
+  Class name: jetblack
+    ------------------ */
+.color_black { color: #070707 }
+.bg_black, input.black, button.black, ul.black li,
+input.black + label {
+  background-color: #070707;
+}
+/* Downpressed button. */
+button.black:active, button.black.pressed,
+/* Input element with adjacent label. */
+input.btn-group:active + label.black,
+input.btn-group.black:active + label,
+input.btn-group:checked + label.black,
+input.btn-group.black:checked + label {
+  background-color: #000000;
+}
+
+#toGraph{
+  background-color: #152B39;
+}
+
+@media  screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio : 2),
+    screen and (orientation: landscape) and (min--moz-device-pixel-ratio: 2),
+    screen and (orientation: landscape) and (min-device-pixel-ratio : 2) {
+  body { font-size: 4.5vw; }
+}
+
+
+/*  ----------------------------------------------------------
+                GAME
+  ---------------------------------------------------------- */
+
+#racer1,
+#racer2             { position: relative; z-index: 0; width: 100%; height:100%; border: 2px solid black; }
+#canvas1, 
+#canvas2            { z-index: 0; width: 100%; height: 100%; background-color: #72D7EE; }
+#chronotime         { text-align: center; }
+
+.row                { display: flex; }
+.column             { flex: 50%; padding: 1%; }
+.hud                { position: absolute; z-index: 1; width: 100%; background-color: rgba(100, 100, 100, 0.8); }
+.hudelement         { padding: 0.5em; font-size: 1.8vw; color: white; }
+.hudcentered        { text-align: center; padding: 0.5em 0 0 0; }
+.hudleft            { float: left; width: 40%; }
+.hudright,
+.speed              { float: right; }
+.topspeed .value,
+.speed .value       { display: inline-block; width: 5vw; }
+.speedbubble        { position: absolute; display: inline-block; height: 30%; width: 25%; margin: 25% 0 0 5%; background: rgba(100, 100, 100, 0.6); border-radius: 50%; }
+.speedbubbleamount    { font-size: 6vw; line-height: 11vw; text-align: center; color: white; }
+.distancebubble       { position: absolute; display: inline-block; height: 30%; width: 35%; margin: 25% 0 0 60%; background: rgba(100, 100, 100, 0.6); border-radius: 50%; }
+.distancebubbleamount   { font-size: 6vw; line-height: 11vw; text-align: center; color: white; }
+.displayWinner      { position: absolute; margin-top: 7vw; font-size: 7vw; color: gold; text-align: center; -webkit-text-stroke: 1px black; background: rgba(255, 255, 255, 0.6); width: 100%; }
+        </code>
+        <p>Download the graphical part here: </p>
+        <button class="btn"><i class="fa fa-download"></i><a class="downloadbtn" href="download/graphical.zip" download="graphical_package">Download</a></button>
+      </article>
+    </section>
+    <section class="main-section" id="Arduino">
+      <header><h2>Arduino Code</h2></header>
+      <article>
+        <header>HandiRace_Final.ino</header>
+        <code class="fichier">
+const byte reedOne = 2; // capteur PIN digital 2 (type byte --> optimisation mémoire)
+const byte led = 9; // capteur PIN digital 9 (type byte --> optimisation mémoire)
+bool captOne = false; // Etat du capteur (par défault non actif)
+
+void sendOne(){ //fonction qui passe l'état du capteur false --> true
+    captOne = true;
+}
+
+void setup() {
+  Serial.begin(38400); // taux de communication par default d'un module bluetooth
+  pinMode(reedOne, INPUT); //Déclaration du capteur comme un module d'entrée de données
+  pinMode(led, OUTPUT); digitalWrite(led, HIGH); // Déclare la LED et l'alume
+  attachInterrupt(digitalPinToInterrupt(reedOne), sendOne, RISING); //L'état du capteur change false --> true si on passe d'un état bas à un état haut 
+}
+
+void loop() {
+  if(captOne){ //Si l'état du capteur est a true,
+    Serial.print('p'); //on envoie le char 'p',
+    captOne = false; //et on remet l'état du capteur à false
+  }
+
+}
+        </code>
+        <p>Download the Arduino code here: </p>
+        <button class="btn"><i class="fa fa-download"></i><a class="downloadbtn" href="download/HandiRace_Final.zip" download="Arduino_code">Download</a></button>
+      </article>
+    </section>
+    
+  </main>
+</body>
+</html>
