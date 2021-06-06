@@ -1,0 +1,18 @@
+{
+  "uuid": "980042fc-7e1c-4321-9a36-1f48c88e28d5",
+  "plugins": [
+    {
+      "name": "cordova-plugin-bluetooth-serial"
+    }
+  ],
+  "libraries": [],
+  "name": "handirace",
+  "title": "HandiRace",
+  "description": "Handirace app",
+  "long-description": "App for wheelchair race demonstrations.",
+  "version": "",
+  "author-name": "Evothings",
+  "author-email": "build@evothings.com",
+  "author-url": "https://evothings.com",
+  "cordova-id": "nc.unc.HandiRace"
+}
